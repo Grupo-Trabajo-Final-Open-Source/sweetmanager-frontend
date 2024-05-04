@@ -1,0 +1,51 @@
+<h2>{{ editMode ? 'Edit Room' : 'New Room' }}</h2>
+<div class="form-section">
+  <form (submit)="onSubmit()" #roomForm='ngForm' class="form-row">
+
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" required [(ngModel)]="room.name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Description" name="description" required [(ngModel)]="room.description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Price" name="price" required [(ngModel)]="room.price">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Worker" name="worker" required [(ngModel)]="room.worker">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Client" name="client" required [(ngModel)]="room.client">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="TotalTelevision" name="totalBeds" required [(ngModel)]="room.totalBeds">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="TotalBathrooms" name="totalBathrooms" required [(ngModel)]="room.totalBathrooms">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="TotalTelevision" name="totalTelevision" required [(ngModel)]="room.totalTelevision">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Status" name="status" required [(ngModel)]="room.status">
+    </mat-form-field>
+
+    <ng-container *ngIf="editMode; else elseTemplate">
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    </ng-container>
+
+    <ng-template #elseTemplate>
+      <button mat-raised-button color="primary">Add</button>
+    </ng-template>
+
+  </form>
+</div>
