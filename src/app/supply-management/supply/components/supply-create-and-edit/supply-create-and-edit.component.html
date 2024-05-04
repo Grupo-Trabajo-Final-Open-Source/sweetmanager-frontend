@@ -1,0 +1,25 @@
+<!-- Create and Edit Form -->
+<h2>{{ editMode ? 'Edit Supply' : 'New Supply' }}</h2>
+<div class="form-section">
+  <form (submit)="onSubmit()" #supplyForm='ngForm' class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="Product" name="product" required [(ngModel)]="supply.product">
+    </mat-form-field>
+    <mat-form-field id="quantity-form-field">
+      <input matInput type="number" placeholder="Quantity" name="quantity" required [(ngModel)]="supply.quantity">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Address" name="address" required [(ngModel)]="supply.address">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Expiration date" name="expire" required [(ngModel)]="supply.expire">
+    </mat-form-field>
+    <ng-container *ngIf="editMode; else elseTemplate">
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-raised-button color="primary">Add</button>
+    </ng-template>
+  </form>
+</div>
