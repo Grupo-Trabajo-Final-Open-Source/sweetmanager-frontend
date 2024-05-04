@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReportsViewComponent } from './dashboard/charts/pages/reports-view/reports-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {HttpClientModule} from "@angular/common/http";
+import { MonthlyExpensesComponent } from './dashboard/charts/components/monthly-expenses/monthly-expenses.component';
+import { MonthlyIncomeComponent } from './dashboard/charts/components/monthly-income/monthly-income.component';
+import { RoomChartComponent } from './dashboard/charts/components/room-chart/room-chart.component';
 import {SuppliesComponent} from "./supply-management/supply/pages/supplies/supplies.component";
 import {
   SupplyCreateAndEditComponent
 } from "./supply-management/supply/components/supply-create-and-edit/supply-create-and-edit.component";
+import { BaseChartDirective } from 'ng2-charts';
+import { Chart, LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController } from 'chart.js';
+
+
 import {
   MatCell,
   MatCellDef,
@@ -29,13 +36,19 @@ import {MatToolbar} from "@angular/material/toolbar";
 import { RoomCreateAndEditComponent } from './monitoring/rooms/components/room-create-and-edit/room-create-and-edit.component';
 import { RoomManagementComponent } from './monitoring/rooms/pages/room-management/room-management.component';
 
+Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
+
 @NgModule({
   declarations: [
     AppComponent,
     SuppliesComponent,
     SupplyCreateAndEditComponent,
     RoomCreateAndEditComponent,
-    RoomManagementComponent
+    RoomManagementComponent,
+    MonthlyExpensesComponent,
+    MonthlyIncomeComponent,
+    RoomChartComponent,
+    ReportsViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +73,8 @@ import { RoomManagementComponent } from './monitoring/rooms/pages/room-managemen
     MatInput,
     MatButton,
     MatAnchor,
-    MatToolbar
+    MatToolbar,
+    BaseChartDirective,
   ],
   providers: [
     provideAnimationsAsync()
