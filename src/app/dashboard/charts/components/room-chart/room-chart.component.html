@@ -1,0 +1,12 @@
+<div class="flex flex-column text-center">
+  <canvas baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [type]="lineChartType"
+          [legend]="lineChartLegend"
+          [plugins]="lineChartPlugins"
+          class="w-full">
+  </canvas>
+  <p class="font-bold">Chart of occupancy by room type</p>
+</div>
