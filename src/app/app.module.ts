@@ -26,12 +26,16 @@ import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatAnchor, MatButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
+import { RoomCreateAndEditComponent } from './monitoring/rooms/components/room-create-and-edit/room-create-and-edit.component';
+import { RoomManagementComponent } from './monitoring/rooms/pages/room-management/room-management.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SuppliesComponent,
-    SupplyCreateAndEditComponent
+    SupplyCreateAndEditComponent,
+    RoomCreateAndEditComponent,
+    RoomManagementComponent
   ],
   imports: [
     BrowserModule,
