@@ -29,7 +29,7 @@ import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatIcon} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
-import {MatFormField} from "@angular/material/form-field";
+import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatAnchor, MatButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
@@ -93,6 +93,8 @@ Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineEle
     MatTab,
     MatCheckbox,
     MatButtonToggle,
+    MatLabel,
+
   ],
   providers: [
     provideAnimationsAsync()
