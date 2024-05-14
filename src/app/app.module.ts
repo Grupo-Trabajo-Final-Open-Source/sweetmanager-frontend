@@ -42,6 +42,7 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {MatButtonToggle} from "@angular/material/button-toggle";
+import { NotificationTableComponent } from './interaction/components/notification-table/notification-table.component';
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -59,6 +60,7 @@ Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineEle
     AccessViewComponent,
     LoginViewComponent,
     RegisterViewComponent,
+    NotificationTableComponent,
   ],
   imports: [
     BrowserModule,
