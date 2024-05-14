@@ -1,0 +1,32 @@
+<form>
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" [(ngModel)]="emailUser" name="email" required>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" [(ngModel)]="passwordUser" name="password" required>
+  </mat-form-field>
+
+  <br>
+
+  <mat-checkbox>
+    Remember Password
+  </mat-checkbox>
+  <br>
+  <div class="center">
+    <mat-button-toggle class="btn btn-primary" (click)="logIn()">LOG IN</mat-button-toggle>
+  </div>
+</form>
+
+<style>
+  .center{
+    text-align: center;
+  }
+  .full-width{
+    width: 350px;
+  }
+</style>

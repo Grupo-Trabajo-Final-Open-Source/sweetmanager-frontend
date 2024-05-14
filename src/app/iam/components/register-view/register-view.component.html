@@ -1,0 +1,53 @@
+<form>
+  <mat-form-field class="full-width">
+    <mat-label>Company Name</mat-label>
+    <input matInput [(ngModel)]="companyName"  name="companyName" required>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field class="full-width">
+    <mat-label>RUC</mat-label>
+    <input matInput [(ngModel)]="ruc" name="ruc" required>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="emailUser" name="email" required>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field class="full-width">
+    <mat-label>Name and LastName (Owner)</mat-label>
+    <input matInput  [(ngModel)]="completeNameUser" name="completeName" required>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" [(ngModel)]="passwordUser" name="password" required>
+  </mat-form-field>
+
+  <br>
+
+  <mat-checkbox>
+    By signing up, you agree to the Terms of Service and Privacy Policy
+  </mat-checkbox>
+
+  <div class="center">
+    <mat-button-toggle (click)="register()" class="btn btn-primary">REGISTER ACCOUNT</mat-button-toggle>
+  </div>
+
+</form>
+
+<style>
+  .center{
+    text-align: center;
+  }
+
+  .full-width{
+    width: 500px;
+  }
+</style>
