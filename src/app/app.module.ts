@@ -40,6 +40,8 @@ import { LoginViewComponent } from './iam/components/login-view/login-view.compo
 import { RegisterViewComponent } from './iam/components/register-view/register-view.component';
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {MatCheckbox} from "@angular/material/checkbox";
+import {MatButtonToggle} from "@angular/material/button-toggle";
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -89,6 +91,8 @@ Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineEle
     MatCardContent,
     MatTabGroup,
     MatTab,
+    MatCheckbox,
+    MatButtonToggle,
   ],
   providers: [
     provideAnimationsAsync()
