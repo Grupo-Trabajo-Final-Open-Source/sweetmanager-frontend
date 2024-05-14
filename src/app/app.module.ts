@@ -35,6 +35,11 @@ import {MatAnchor, MatButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
 import { RoomCreateAndEditComponent } from './monitoring/rooms/components/room-create-and-edit/room-create-and-edit.component';
 import { RoomManagementComponent } from './monitoring/rooms/pages/room-management/room-management.component';
+import { AccessViewComponent } from './iam/components/access-view/access-view.component';
+import { LoginViewComponent } from './iam/components/login-view/login-view.component';
+import { RegisterViewComponent } from './iam/components/register-view/register-view.component';
+import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
+import {MatTab, MatTabGroup} from "@angular/material/tabs";
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -49,6 +54,9 @@ Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineEle
     MonthlyIncomeComponent,
     RoomChartComponent,
     ReportsViewComponent,
+    AccessViewComponent,
+    LoginViewComponent,
+    RegisterViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +83,12 @@ Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineEle
     MatAnchor,
     MatToolbar,
     BaseChartDirective,
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardContent,
+    MatTabGroup,
+    MatTab,
   ],
   providers: [
     provideAnimationsAsync()
