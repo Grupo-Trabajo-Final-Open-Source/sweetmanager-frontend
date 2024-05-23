@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
-div.page-container {
-  background-color: #F8F8F8;
+.page-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -10,13 +9,13 @@ div.page-container {
   overflow: scroll;
 }
 
-div.main-container {
+.main-container {
   background-color: #F8F8F8;
   margin: 0;
   padding: 0;
 }
 
-div.title-container {
+.title-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,46 +24,46 @@ div.title-container {
   transform: translate(325px, -290px);
 }
 
-div.grid-charts-container {
+.grid-charts-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-div.grid-charts-container .col {
+.grid-charts-container .col {
   margin-top: 150px;
   margin-bottom: -150px;
   margin-left: -350px;
 }
 
-div.grid-charts-container .col.monthly-expenses {
+.grid-charts-container .col.monthly-expenses {
   transform:translate(-60px, 0px);
 }
 
-div.grid-charts-container .col.monthly-income {
+.grid-charts-container .col.monthly-income {
   transform:translate(85px, 0px);
 }
 
-div.grid-charts-container .col.room-chart {
+.grid-charts-container .col.room-chart {
   transform:translate(-294px, 250px);
 }
 
-div.title-container p.title-panel-control {
+.title-container p.title-panel-control {
   font-size: 18px;
   font-weight: bold;
   color: #4A845B;
   font-family: 'Nunito', sans-serif;
 }
 
-div.title-container p.title-statistical-reports {
+.title-container p.title-statistical-reports {
   font-size: 32px;
   font-weight: bold;
   color: #000000;
   font-family: 'Nunito', sans-serif;
 }
 
-div.grid-charts-container {
+.grid-charts-container {
   background-color: #FFFFFF;
   margin: 100px auto auto;
   width: 885px;

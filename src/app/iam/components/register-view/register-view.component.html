@@ -1,43 +1,43 @@
 <form>
   <mat-form-field class="full-width">
-    <mat-label>Company Name</mat-label>
+    <mat-label>{{'iam.sign-in.labels.company-name' | translate}}</mat-label>
     <input matInput [(ngModel)]="companyName"  name="companyName" required>
   </mat-form-field>
   <br>
 
   <mat-form-field class="full-width">
-    <mat-label>RUC</mat-label>
+    <mat-label>{{'iam.sign-in.labels.ruc' | translate}}</mat-label>
     <input matInput [(ngModel)]="ruc" name="ruc" required>
   </mat-form-field>
 
   <br>
 
   <mat-form-field class="full-width">
-    <mat-label>Email</mat-label>
+    <mat-label>{{'iam.sign-in.labels.email' | translate}}</mat-label>
     <input matInput [(ngModel)]="emailUser" name="email" required>
   </mat-form-field>
   <br>
 
   <mat-form-field class="full-width">
-    <mat-label>Name and LastName (Owner)</mat-label>
+    <mat-label>{{'iam.sign-in.labels.full-name' | translate}}</mat-label>
     <input matInput  [(ngModel)]="completeNameUser" name="completeName" required>
   </mat-form-field>
 
   <br>
 
   <mat-form-field class="full-width">
-    <mat-label>Password</mat-label>
+    <mat-label>{{'iam.sign-in.labels.password' | translate}}</mat-label>
     <input matInput type="password" [(ngModel)]="passwordUser" name="password" required>
   </mat-form-field>
 
   <br>
 
   <mat-checkbox>
-    By signing up, you agree to the Terms of Service and Privacy Policy
+    {{'iam.sign-in.checkbox-privacy' | translate}}
   </mat-checkbox>
 
   <div class="center">
-    <mat-button-toggle (click)="register()" class="btn btn-primary">REGISTER ACCOUNT</mat-button-toggle>
+    <mat-button-toggle (click)="register()" class="btn btn-primary">{{'iam.sign-in.button-sign-in' | translate}}</mat-button-toggle>
   </div>
 
 </form>
