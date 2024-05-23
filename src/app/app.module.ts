@@ -4,7 +4,7 @@ import { ReportsViewComponent } from './dashboard/charts/pages/reports-view/repo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { MonthlyExpensesComponent } from './dashboard/charts/components/monthly-expenses/monthly-expenses.component';
 import { MonthlyIncomeComponent } from './dashboard/charts/components/monthly-income/monthly-income.component';
 import { RoomChartComponent } from './dashboard/charts/components/room-chart/room-chart.component';
@@ -41,10 +41,32 @@ import { RegisterViewComponent } from './iam/components/register-view/register-v
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {MatCheckbox} from "@angular/material/checkbox";
-import {MatButtonToggle} from "@angular/material/button-toggle";
+import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-toggle";
 import { NotificationTableComponent } from './interaction/components/notification-table/notification-table.component';
+import { LanguageSwitcherComponent } from './public/components/language-switcher/language-switcher.component';
+import {Observable} from "rxjs";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
+
+export class TranslateHttpLoader implements TranslateLoader{
+  constructor(private http: HttpClient,
+              public prefix: string = '/assets/i18n/',
+              public suffix: string = '.json') {
+  }
+
+  public  getTranslation(lang: string): Observable<any> {
+    return this.http.get(`${this.prefix}${lang}${this.suffix}`);
+  }
+
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+
+}
+
+
 
 @NgModule({
   declarations: [
@@ -61,6 +83,7 @@ Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineEle
     LoginViewComponent,
     RegisterViewComponent,
     NotificationTableComponent,
+    LanguageSwitcherComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +119,16 @@ Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineEle
     MatCheckbox,
     MatButtonToggle,
     MatLabel,
-
+    TranslateModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    MatButtonToggleGroup
   ],
   providers: [
     provideAnimationsAsync()
