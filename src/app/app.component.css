@@ -1,0 +1,34 @@
+.title {
+  font-size: 1.5rem;
+}
+
+.mat-spacer{
+  flex: 1 1 auto;
+}
+
+.green-background{
+  background-color: #228B22;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.routes-toolbar{
+  font-size: 15px
+}
+
+@media (max-width: 600px) {
+  .mat-toolbar {
+    flex-direction: column;
+  }
+  .title {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .responsive-toolbar {
+    height: 150px;
+  }
+}
