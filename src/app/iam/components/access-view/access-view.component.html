@@ -3,7 +3,7 @@
     <mat-card>
       <mat-card-header>
         <div class="center">
-          <mat-card-title>Welcome to Sweet Manager</mat-card-title>
+          <mat-card-title>{{'iam.log-in.title-card' | translate}}</mat-card-title>
         </div>
 
       </mat-card-header>
@@ -11,11 +11,11 @@
       <mat-card-content>
 
         <mat-tab-group #logIn>
-          <mat-tab label="Log In">
+          <mat-tab label="{{'iam.log-in.tabs-title' | translate}}">
             <app-login-view></app-login-view>
           </mat-tab>
 
-          <mat-tab label="Sign In">
+          <mat-tab label="{{'iam.sign-in.tabs-title' | translate}}">
             <app-register-view></app-register-view>
           </mat-tab>
         </mat-tab-group>

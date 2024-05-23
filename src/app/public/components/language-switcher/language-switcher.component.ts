@@ -10,7 +10,7 @@ import {FormControl} from "@angular/forms";
 export class LanguageSwitcherComponent {
   currentLang = 'en';
   languages = ['en', 'es'];
-  disableSelect = new FormControl(false);
+
   constructor(private translate: TranslateService) {
     this.currentLang = translate.currentLang;
   }

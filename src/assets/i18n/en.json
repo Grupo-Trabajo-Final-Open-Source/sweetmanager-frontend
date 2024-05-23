@@ -4,13 +4,24 @@
       "title-card": "Welcome to Sweet Manager",
       "tabs-title": "Log In",
       "checkbox-password": "Remember password",
-      "button-login": "Log In"
+      "button-login": "Log In",
+      "labels": {
+        "email": "Email",
+        "password": "Password"
+      }
     },
     "sign-in": {
       "title-card": "Welcome to Sweet Manager",
       "tabs-title": "Sign In",
       "checkbox-privacy": "By signing up, you agree to the Terms of Service and Privacy Policy",
-      "button-sign-in": "Register Account"
+      "button-sign-in": "Register Account",
+      "labels": {
+        "company-name": "Company Name",
+        "ruc": "RUC",
+        "full-name": "Name and LastName (Owner)",
+        "email": "Email",
+        "password": "Password"
+      }
     }
   },
   "interaction": {
