@@ -46,6 +46,7 @@ import { NotificationTableComponent } from './interaction/components/notificatio
 import { LanguageSwitcherComponent } from './public/components/language-switcher/language-switcher.component';
 import {Observable} from "rxjs";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import { ToolbarContentComponent } from './public/components/toolbar-content/toolbar-content.component';
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -82,6 +83,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RegisterViewComponent,
     NotificationTableComponent,
     LanguageSwitcherComponent,
+    ToolbarContentComponent,
   ],
   imports: [
     BrowserModule,
