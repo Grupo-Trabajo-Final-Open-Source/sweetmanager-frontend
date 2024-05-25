@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/user.entity";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-view',
@@ -14,7 +15,7 @@ export class LoginViewComponent {
 
   listUsers : Array<User> = [];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
 
@@ -32,6 +33,7 @@ export class LoginViewComponent {
 
         if(user != null){
           alert('Successfully logged in!')
+          this.router.navigate(['/dashboard/panel']);
         }
         else{
           alert('User not found!')
