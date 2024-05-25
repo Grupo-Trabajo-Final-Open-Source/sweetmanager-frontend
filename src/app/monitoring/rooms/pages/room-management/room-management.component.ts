@@ -13,6 +13,12 @@ import {RoomControlService} from "../../services/room-control.service";
 export class RoomManagementComponent {
 
   // Attributes
+  options = [
+    {path: '/monitoring/rooms', title: 'Room Management'},
+    {path: '/dashboard/panel', title: 'Reports View'},
+    {path: '/supply-management/supplies', title: 'Supplies'},
+    {path: '/interaction/notifications', title: 'Notifications'}
+  ]
   roomData: Room;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'name', 'description', 'price', 'worker', 'client', 'totalBeds', 'totalBathrooms', 'totalTelevision', 'status', 'actions'];
