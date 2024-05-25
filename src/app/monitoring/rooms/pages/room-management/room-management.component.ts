@@ -16,8 +16,7 @@ export class RoomManagementComponent {
   options = [
     {path: '/monitoring/rooms', title: 'Room Management'},
     {path: '/dashboard/panel', title: 'Reports View'},
-    {path: '/supply-management/supplies', title: 'Supplies'},
-    {path: '/interaction/notifications', title: 'Notifications'}
+    {path: '/supply-management/supplies', title: 'Supplies'}
   ]
   roomData: Room;
   dataSource!: MatTableDataSource<any>;
