@@ -16,7 +16,6 @@ export class NotificationTableComponent {
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
   notificationData: Notification;
-
   // Constructor
   constructor(private notificationService: NotificationService) {
     this.notificationData = {} as Notification;
