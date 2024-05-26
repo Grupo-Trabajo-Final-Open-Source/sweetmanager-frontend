@@ -1,1 +1,36 @@
-<p>card-payment works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Proceder con el Pago</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field class="full-width">
+        <mat-label>Nombre Titular de la Tarjeta</mat-label>
+        <input matInput type="text" name="titularName" [(ngModel)]="titularName" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Numero de Tarjeta</mat-label>
+        <input matInput type="text" name="targetAccount" [(ngModel)]="targetAccount" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Fecha de Vencimiento</mat-label>
+        <input matInput name="expirationDate" [(ngModel)]="expirationDate" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Codigo de Seguridad</mat-label>
+        <input matInput type="number" name="cvc" [(ngModel)]="cvc" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="email" required>
+      </mat-form-field>
+      <mat-button-toggle (click)="pay()" class="btn btn-primary">Confirmar</mat-button-toggle>
+    </form>
+  </mat-card-content>
+</mat-card>
