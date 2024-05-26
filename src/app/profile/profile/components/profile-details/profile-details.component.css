@@ -1,0 +1,62 @@
+.profile-details {
+  font-family: 'Nunito', sans-serif;
+}
+
+.profile-details .section {
+  margin-left: -8%;
+  margin-top: -95%;
+  margin-bottom: 103%;
+}
+
+.profile-details .section p {
+  margin: 0.2em 0;
+  font-size: 13px;
+}
+
+.profile-details .section strong {
+  color: #000000;
+  font-size: 19px;
+}
+
+.profile-details .section .delete-account {
+  color: #FF3439;
+}
+
+.profile-details .section .info {
+  margin-left: 1em;
+}
+
+.profile-details .section a {
+  color: #4A845B;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-left: -0.75em;
+}
+
+.profile-details .section a:hover {
+  color: #2F6147;
+  text-decoration: underline;
+}
+
+.profile-details .section .delete-account:hover {
+  color: #CC0000;
+  text-decoration: underline;
+}
+
+.profile-details .section:nth-child(7) a {
+  color: #FF3439;
+}
+
+.profile-details hr {
+  border: 1px solid #4D6443;
+}
+
+@media (max-width: 1240px) {
+  .profile-details .section {
+    margin-left: 0;
+    margin-top: -15%;
+    margin-bottom: 25%;
+  }
+}
