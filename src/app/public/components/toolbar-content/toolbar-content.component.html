@@ -1,14 +1,11 @@
-<!--<header>
-  <mat-toolbar class="green-background responsive-toolbar">
+<mat-toolbar class="green-background responsive-toolbar">
+  <div class="title-container">
     <a mat-button routerLink="/access-view" class="title">Sweet Manager</a>
-
-    <div class="mat-spacer"></div>
-    <span>
+  </div>
+  <span>
     <app-language-switcher></app-language-switcher>
-    </span>
-    <div class="mat-spacer-full"></div>
+  </span>
+  <div class="route-container">
     <a mat-button *ngFor="let option of options" [routerLink]="option.path" class="routes-toolbar">{{option.title}}</a>
-  </mat-toolbar>
-</header>-->
-<router-outlet />
-
+  </div>
+</mat-toolbar>

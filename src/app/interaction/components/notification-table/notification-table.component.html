@@ -1,0 +1,30 @@
+<!-- Notifications catalogue -->
+<div class="table-wrapper">
+  <h1 class="center">{{'interaction.title' | translate }}</h1>
+
+  <!-- Data Table -->
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'interaction.attributes.id' | translate}}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{'interaction.attributes.title' | translate}}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.title }}</td>
+    </ng-container>
+    <ng-container matColumnDef="message">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{'interaction.attributes.message' | translate}}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.message }}</td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{'interaction.attributes.date' | translate}}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.date }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!-- Paginator child component-->
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

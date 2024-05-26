@@ -12,6 +12,11 @@ import {MatSort} from "@angular/material/sort";
 })
 export class SuppliesComponent implements OnInit, AfterViewInit {
   // Attributes
+  options = [
+    {path: '/monitoring/rooms', title: 'Room Management'},
+    {path: '/dashboard/panel', title: 'Reports View'},
+    {path: '/supply-management/supplies', title: 'Supplies'}
+  ]
   supplyData: Supply;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'product', 'quantity', 'address', 'expire', 'actions'];
