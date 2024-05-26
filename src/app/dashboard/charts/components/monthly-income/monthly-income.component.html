@@ -1,0 +1,12 @@
+<div class="flex flex-column text-center">
+  <canvas baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [type]="'line'"
+          [legend]="true"
+          [plugins]="[]"
+          class="w-full">
+  </canvas>
+  <p class="font-bold">Monthly chart of income and expenses</p>
+</div>

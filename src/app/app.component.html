@@ -1,1 +1,14 @@
-<p>FUNCIONA</p>
+<!--<header>
+  <mat-toolbar class="green-background responsive-toolbar">
+    <a mat-button routerLink="/access-view" class="title">Sweet Manager</a>
+
+    <div class="mat-spacer"></div>
+    <span>
+    <app-language-switcher></app-language-switcher>
+    </span>
+    <div class="mat-spacer-full"></div>
+    <a mat-button *ngFor="let option of options" [routerLink]="option.path" class="routes-toolbar">{{option.title}}</a>
+  </mat-toolbar>
+</header>-->
+<router-outlet />
+

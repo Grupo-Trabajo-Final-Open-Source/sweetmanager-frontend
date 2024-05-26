@@ -1,0 +1,80 @@
+<header>
+  <app-toolbar-content [options]="options"></app-toolbar-content>
+</header>
+
+<div class="table-wrapper">
+  <h1>Rooms</h1>
+
+  <!--Add/Edit Form-->
+  <app-room-create-and-edit (editCanceled)="onCancelEdit()"
+                            (roomAdded)="onRoomAdded($event)"
+                            (roomUpdated)="onRoomUpdated($event)"
+                            [editMode] = "isEditMode"
+                            [room]="roomData"/>
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell> #Id</th>
+      <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef mat-header-cell>Name</th>
+      <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th *matHeaderCellDef mat-header-cell>Description</th>
+      <td *matCellDef="let element" mat-cell>{{ element.description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th *matHeaderCellDef mat-header-cell>Price</th>
+      <td *matCellDef="let element" mat-cell>{{ element.price }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="worker">
+      <th *matHeaderCellDef mat-header-cell>Worker</th>
+      <td *matCellDef="let element" mat-cell>{{ element.worker }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="client">
+      <th *matHeaderCellDef mat-header-cell>Client</th>
+      <td *matCellDef="let element" mat-cell>{{ element.client }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalBeds">
+      <th *matHeaderCellDef mat-header-cell>Total Beds</th>
+      <td *matCellDef="let element" mat-cell>{{ element.totalBeds }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalBathrooms">
+      <th *matHeaderCellDef mat-header-cell>Total Bathrooms</th>
+      <td *matCellDef="let element" mat-cell>{{ element.totalBathrooms }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalTelevision">
+      <th *matHeaderCellDef mat-header-cell>Total Television</th>
+      <td *matCellDef="let element" mat-cell>{{ element.totalTelevision }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th *matHeaderCellDef mat-header-cell>Status</th>
+      <td *matCellDef="let element" mat-cell>{{ element.status }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell> Actions</th>
+      <td *matCellDef="let element" mat-cell>
+        <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+        <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': roomData.id === row.id }" mat-row></tr>
+  </table>
+  <!-- Paginator child component-->
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>
