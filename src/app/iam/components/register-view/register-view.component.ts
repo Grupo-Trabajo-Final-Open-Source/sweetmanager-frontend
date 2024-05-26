@@ -38,7 +38,7 @@ export class RegisterViewComponent {
           email: this.emailUser,
           password: this.passwordUser,
           company: company.id,
-          role: 'owner'
+          role: 'MANAGER'
         }
 
         this.userService.createUser(user)
