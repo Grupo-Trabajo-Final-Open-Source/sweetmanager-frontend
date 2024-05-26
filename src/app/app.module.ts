@@ -47,6 +47,10 @@ import { LanguageSwitcherComponent } from './public/components/language-switcher
 import {Observable} from "rxjs";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import { ToolbarContentComponent } from './public/components/toolbar-content/toolbar-content.component';
+import {
+    CompanyWorkersViewComponent
+} from "./profile/company-workers/pages/company-workers-view/company-workers-view.component";
+import {ProfileViewComponent} from "./profile/profile/pages/profile-view/profile-view.component";
 
 import { CardPaymentComponent } from './payment/components/card-payment/card-payment.component';
 import { CardSubscriptionComponent } from './payment/components/card-subscription/card-subscription.component';
@@ -144,6 +148,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     MatButtonToggleGroup,
+    CompanyWorkersViewComponent,
+    ProfileViewComponent,
     MatDatepickerToggle,
     MatDatepicker,
     MatDatepickerInput,
