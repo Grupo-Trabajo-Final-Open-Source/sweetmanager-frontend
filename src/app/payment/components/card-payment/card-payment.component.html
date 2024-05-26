@@ -1,36 +1,80 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      <h2>Proceder con el Pago</h2>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form>
-      <mat-form-field class="full-width">
-        <mat-label>Nombre Titular de la Tarjeta</mat-label>
-        <input matInput type="text" name="titularName" [(ngModel)]="titularName" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>Numero de Tarjeta</mat-label>
-        <input matInput type="text" name="targetAccount" [(ngModel)]="targetAccount" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>Fecha de Vencimiento</mat-label>
-        <input matInput name="expirationDate" [(ngModel)]="expirationDate" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>Codigo de Seguridad</mat-label>
-        <input matInput type="number" name="cvc" [(ngModel)]="cvc" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>Correo Electronico</mat-label>
-        <input matInput type="email" name="email" [(ngModel)]="email" required>
-      </mat-form-field>
-      <mat-button-toggle (click)="pay()" class="btn btn-primary">Confirmar</mat-button-toggle>
-    </form>
-  </mat-card-content>
-</mat-card>
+<header>
+  <app-toolbar-content></app-toolbar-content>
+</header>
+<div class="chart">
+  <div class="center">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Proceder con el Pago</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form>
+          <mat-form-field class="full-width">
+            <mat-label>Nombre Titular de la Tarjeta</mat-label>
+            <input matInput type="text" name="titularName" [(ngModel)]="titularName" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="full-width">
+            <mat-label>Numero de Tarjeta</mat-label>
+            <input matInput type="text" name="targetAccount" [(ngModel)]="targetAccount" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="mid-width space">
+            <mat-label>Fecha de Vencimiento</mat-label>
+            <input matInput name="expirationDate" type="text" [(ngModel)]="expirationDate" required>
+          </mat-form-field>
+
+          <mat-form-field class="mid-width">
+            <mat-label>Codigo de Seguridad</mat-label>
+            <input matInput type="text" name="cvc" [(ngModel)]="cvc" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="full-width">
+            <mat-label>Correo Electronico</mat-label>
+            <input matInput type="email" name="email" [(ngModel)]="email" required>
+          </mat-form-field>
+          <br>
+          <div class="center-button">
+            <mat-button-toggle (click)="pay()" class="btn btn-primary">Confirmar</mat-button-toggle>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<style>
+  .chart{
+    background-image: url('assets/hotel-background.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .center-button{
+    text-align: center;
+  }
+
+  .full-width{
+    width: 500px;
+  }
+
+  .mid-width{
+    width: 245px;
+  }
+
+  .space{
+    margin-right: 5px;
+  }
+</style>
