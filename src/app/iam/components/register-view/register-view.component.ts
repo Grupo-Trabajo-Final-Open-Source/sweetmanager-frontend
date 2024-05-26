@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {CompanyService} from "../../services/company.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-view',
@@ -19,7 +20,7 @@ export class RegisterViewComponent {
   completeNameUser : string = '';
 
 
-  constructor(private userService: UserService, private companyService: CompanyService) {
+  constructor(private userService: UserService, private companyService: CompanyService, private router: Router) {
   }
 
   register() {
@@ -44,7 +45,7 @@ export class RegisterViewComponent {
           .subscribe((user: any) => {
             console.log(user);
             alert('User created correctly!')
-            window.location.reload();
+            this.router.navigate(['/payment/management']);
           })
       })
   }
