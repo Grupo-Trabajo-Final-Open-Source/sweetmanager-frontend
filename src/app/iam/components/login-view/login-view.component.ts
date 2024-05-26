@@ -20,7 +20,6 @@ export class LoginViewComponent {
 
 
   logIn() {
-    this.userService.getUsers();
 
     this.userService.getUsers()
       .subscribe((users: any) => {
