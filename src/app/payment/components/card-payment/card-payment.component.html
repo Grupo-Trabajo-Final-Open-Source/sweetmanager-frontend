@@ -47,13 +47,13 @@
     <mat-card class="small-card">
       <mat-card-header>
         <mat-card-title>
-          <h2>REGULAR</h2>
+          <h2>{{subscriptionCard.title}}</h2>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>$222.31 / month</p>
-        <mat-checkbox checked (click)="$event.preventDefault()">Database with 1TB of storage</mat-checkbox>
-        <mat-checkbox checked (click)="$event.preventDefault()">Technical Support 24/7</mat-checkbox>
+        <p>${{subscriptionCard.price }} / month</p>
+        <mat-checkbox checked (click)="$event.preventDefault()">{{ subscriptionCard.description }}</mat-checkbox>
+        <mat-checkbox checked (click)="$event.preventDefault()">{{technicalSupport()}}</mat-checkbox>
       </mat-card-content>
     </mat-card>
     </div>

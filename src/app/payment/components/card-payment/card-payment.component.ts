@@ -4,6 +4,7 @@ import {UserService} from "../../../iam/services/user.service";
 import {Router} from "@angular/router";
 import {User} from "../../../iam/models/user.entity";
 import {Subscription} from "../../models/subscription.entity";
+import {SubscriptionService} from "../../services/subscription.service";
 
 @Component({
   selector: 'app-card-payment',
@@ -22,14 +23,35 @@ export class CardPaymentComponent {
   users: Array<User> = [];
   // Card Subscription Attributes
   subscriptionCard: any = new Subscription();
-
+  subscriptions: Array<Subscription> = [];
   idSubscription: any = '';
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router,
+              private subscriptionService: SubscriptionService) {
   }
 
   ngOnInit(){
     this.idSubscription = localStorage.getItem('idSubscription');
+    this.getSubscriptionCard(); // Get the Subscription Model for Information
+  }
+
+  getSubscriptionCard(){
+    this.subscriptionService.getSubscriptions().subscribe((subscriptions: any) => {
+      this.subscriptions = subscriptions;
+
+      console.log(this.subscriptions);
+
+      this.subscriptionCard = this.subscriptions.find(s => s.id == this.idSubscription);
+    })
+  }
+
+  technicalSupport(){
+    if(this.idSubscription == 1){
+      return "Restricted Technical Support";
+    }
+    else{
+      return "Technical Support 24/7";
+    }
   }
 
   pay(){
