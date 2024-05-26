@@ -47,6 +47,10 @@ import { LanguageSwitcherComponent } from './public/components/language-switcher
 import {Observable} from "rxjs";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import { ToolbarContentComponent } from './public/components/toolbar-content/toolbar-content.component';
+import {
+    CompanyWorkersViewComponent
+} from "./profile/company-workers/pages/company-workers-view/company-workers-view.component";
+import {ProfileViewComponent} from "./profile/profile/pages/profile-view/profile-view.component";
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -128,7 +132,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    MatButtonToggleGroup
+    MatButtonToggleGroup,
+    CompanyWorkersViewComponent,
+    ProfileViewComponent
   ],
   providers: [
     provideAnimationsAsync()
