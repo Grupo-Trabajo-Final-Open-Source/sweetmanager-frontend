@@ -5,6 +5,8 @@ import {RoomManagementComponent} from "./monitoring/rooms/pages/room-management/
 import {ReportsViewComponent} from "./dashboard/charts/pages/reports-view/reports-view.component";
 import {SuppliesComponent} from "./supply-management/supply/pages/supplies/supplies.component";
 import {NotificationTableComponent} from "./interaction/components/notification-table/notification-table.component";
+import {CardPaymentComponent} from "./payment/components/card-payment/card-payment.component";
+import {CardSubscriptionComponent} from "./payment/components/card-subscription/card-subscription.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/access-view', pathMatch: 'full'},
@@ -12,7 +14,9 @@ const routes: Routes = [
   {path: 'monitoring/rooms' , component: RoomManagementComponent},
   {path: 'dashboard/panel' , component: ReportsViewComponent},
   {path: 'supply-management/supplies', component: SuppliesComponent},
-  {path: 'interaction/notifications', component: NotificationTableComponent}
+  {path: 'interaction/notifications', component: NotificationTableComponent},
+  {path: 'payment/management', component: CardPaymentComponent},
+  {path: 'payment/subscription', component: CardSubscriptionComponent}
 ];
 
 @NgModule({

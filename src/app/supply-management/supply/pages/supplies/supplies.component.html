@@ -4,37 +4,43 @@
 
 <!-- Supply catalogue -->
 <div class="table-wrapper">
-  <h1>Supplies</h1>
+  <div class="table-header">
+    <p>{{'control-panel' | translate}}</p>
+    <h1>{{'manage-supplies' | translate}}</h1>
+  </div>
   <!--Add/Edit Form-->
   <app-supply-create-and-edit (editCanceled)="onCancelEdit()"
                               (supplyAdded)="onSupplyAdded($event)"
                               (supplyUpdated)="onSupplyUpdated($event)"
                               [editMode]="isEditMode"
                               [supply]="supplyData" />
+  <div class="search">
+    <input [(ngModel)]="filterValue" (ngModelChange)="applyFilter()" placeholder="{{ 'supply.search' | translate }}">
+  </div>
   <!-- Data Table -->
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>#Id</th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>#ID</th>
       <td *matCellDef="let element" mat-cell>{{element.id}}</td>
     </ng-container>
     <ng-container matColumnDef="product">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>Product</th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'supply.product' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{element.product}}</td>
     </ng-container>
     <ng-container matColumnDef="quantity">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>Quantity</th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'supply.quantity' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{element.quantity}}</td>
     </ng-container>
     <ng-container matColumnDef="address">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>Address</th>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'supply.address' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.address}}</td>
     </ng-container>
     <ng-container matColumnDef="expire">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>Expiration date</th>
-      <td *matCellDef="let element" mat-cell>{{element.expire}}</td>
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'supply.expire' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{element.expire | date:'dd/MM/yyyy'}}</td>
     </ng-container>
     <ng-container matColumnDef="actions">
-      <th *matHeaderCellDef mat-header-cell> Actions</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'actions.title' | translate }}</th>
       <td *matCellDef="let element" mat-cell>
         <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
         <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>

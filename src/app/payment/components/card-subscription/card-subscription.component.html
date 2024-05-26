@@ -1,0 +1,126 @@
+<header>
+  <app-toolbar-content></app-toolbar-content>
+</header>
+
+<div class="chart">
+  <div class="center">
+    <mat-card class="large-card">
+      <div class="header-mid">
+        <mat-card-header>
+          <mat-card-title><h1>{{'payment.subscription.title' | translate}}</h1></mat-card-title>
+        </mat-card-header>
+      </div>
+      <div class="content">
+        <!-- First Child Card -->
+        <mat-card class="small-card">
+          <mat-card-header>
+            <mat-card-title>
+              <h2>{{'payment.subscription.cards.basic.title' | translate}}</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>$111.99 / {{'payment.subscription.cards.basic.price-month' | translate}}</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.basic.description' | translate}}</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{ 'payment.subscription.cards.basic.technical-support' | translate }}</mat-checkbox>
+          </mat-card-content>
+          <br>
+          <div class="center">
+            <mat-button-toggle (click)="navigateToPaymentBasic()">{{'payment.subscription.button' | translate}}</mat-button-toggle>
+          </div>
+        </mat-card>
+        <!-- Second Child Card -->
+        <mat-card class="small-card">
+          <mat-card-header>
+            <mat-card-title>
+              <h2>{{'payment.subscription.cards.regular.title' | translate}}</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>$222.31 / {{'payment.subscription.cards.regular.price-month' | translate}}</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.regular.description' | translate}}</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.regular.technical-support' | translate }}</mat-checkbox>
+          </mat-card-content>
+          <br>
+          <div class="center">
+            <mat-button-toggle (click)="navigateToPaymentRegular()">{{ 'payment.subscription.button' |translate }}</mat-button-toggle>
+          </div>
+        </mat-card>
+        <!-- Third Child Card -->
+        <mat-card class="small-card">
+          <mat-card-header>
+            <mat-card-title>
+              <h2>{{'payment.subscription.cards.premium.title' | translate}}</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>$370.54 / {{'payment.subscription.cards.premium.price-month' | translate}}</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.premium.description' | translate}}</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.premium.technical-support' | translate}}</mat-checkbox>
+          </mat-card-content>
+          <br>
+          <div class="center">
+            <mat-button-toggle (click)="navigateToPaymentPremium()">{{'payment.subscription.button' | translate}}</mat-button-toggle>
+          </div>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<style>
+  .chart{
+    background-image: url('assets/hotel-background.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .small-card {
+    width: 30%; /* Ajusta este valor según tus necesidades */
+    background-color: #add8e6;
+    height: 70%
+  }
+
+  .small-card:first-child {
+    background-color: #8B4513; /* Ajusta este valor según tus necesidades */
+  }
+
+  .small-card:nth-child(3) {
+    background-color: gold;
+  }
+
+  .small-card p:first-child {
+    font-size: 25px; /* Ajusta este valor según tus necesidades */
+  }
+
+  .large-card {
+    margin: 20px; /* Ajusta este valor según tus necesidades */
+    width: 60%;
+    height: 50%;
+    border-radius: 20px;
+    background: beige;
+  }
+
+  .header-mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,109 @@
+<header>
+  <app-toolbar-content></app-toolbar-content>
+</header>
+<div class="chart">
+  <div class="center">
+    <div class="content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>{{ 'payment.management.title' | translate}}</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form>
+          <mat-form-field class="full-width">
+            <mat-label>{{'payment.management.titular-name' | translate}}</mat-label>
+            <input matInput type="text" name="titularName" [(ngModel)]="titularName" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="full-width">
+            <mat-label>{{'payment.management.number-card' | translate}}</mat-label>
+            <input matInput type="text" name="targetAccount" [(ngModel)]="targetAccount" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="mid-width space">
+            <mat-label>{{'payment.management.expiration-date' | translate}}</mat-label>
+            <input matInput name="expirationDate" type="text" [(ngModel)]="expirationDate" required>
+          </mat-form-field>
+
+          <mat-form-field class="mid-width">
+            <mat-label>{{'payment.management.security-code' | translate}}</mat-label>
+            <input matInput type="text" name="cvc" [(ngModel)]="cvc" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="full-width">
+            <mat-label>{{'payment.management.email' | translate}}</mat-label>
+            <input matInput type="email" name="email" [(ngModel)]="email" required>
+          </mat-form-field>
+          <br>
+          <div class="center-button">
+            <mat-button-toggle (click)="pay()" class="btn btn-primary">{{'payment.management.confirm-button' | translate}}</mat-button-toggle>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    <!-- New Card -->
+    <mat-card class="small-card">
+      <mat-card-header>
+        <mat-card-title>
+          <h2>{{subscriptionCard.title}}</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>${{subscriptionCard.price }} / month</p>
+        <mat-checkbox checked (click)="$event.preventDefault()">{{ subscriptionCard.description }}</mat-checkbox>
+        <mat-checkbox checked (click)="$event.preventDefault()">{{technicalSupport()}}</mat-checkbox>
+      </mat-card-content>
+    </mat-card>
+    </div>
+  </div>
+</div>
+
+<style>
+  .chart{
+    background-image: url('assets/hotel-background.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .center-button{
+    text-align: center;
+  }
+
+  .full-width{
+    width: 500px;
+  }
+
+  .mid-width{
+    width: 245px;
+  }
+
+  .space{
+    margin-right: 5px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .small-card {
+    width: 30%; /* Ajusta este valor según tus necesidades */
+    background-color: #add8e6;
+  }
+
+  .small-card p:first-child {
+    font-size: 25px; /* Ajusta este valor según tus necesidades */
+  }
+
+</style>
