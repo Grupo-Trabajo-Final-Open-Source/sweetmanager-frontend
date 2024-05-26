@@ -18,7 +18,7 @@ export class SupplyCreateAndEditComponent {
   @ViewChild('supplyForm', {static: false}) supplyForm!: NgForm;
 
   // Methods
-  constructor(private datePipe: DatePipe) {
+  constructor() {
     this.supply = {} as Supply;
   }
 
