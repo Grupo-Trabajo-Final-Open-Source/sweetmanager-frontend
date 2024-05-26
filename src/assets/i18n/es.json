@@ -33,7 +33,10 @@
       "date": "Fecha"
     }
   },
+  "control-panel": "Panel de Control",
   "actions": {
+    "add": "Añadir",
+    "title": "Acciones",
     "edit": "Editar",
     "new": "Añadir",
     "update": "Actualizar",

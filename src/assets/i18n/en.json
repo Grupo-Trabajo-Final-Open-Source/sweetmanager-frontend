@@ -33,7 +33,10 @@
       "date": "Date"
     }
   },
+  "control-panel": "Control Panel",
   "actions": {
+    "add": "Add",
+    "title": "Actions",
     "edit": "Edit",
     "new": "New",
     "update": "Update",
@@ -55,13 +58,9 @@
   "supply": {
     "title": "Supply",
     "product": "Product",
-    "product-required": "Product title is required",
     "quantity": "Quantity",
-    "quantity-required": "Quantity is required",
     "address": "Address",
-    "address-required": "Address is required",
     "expire": "Expiration Date",
-    "expire-required": "Expiration Date is required",
     "search": "Search..."
   }
 }
