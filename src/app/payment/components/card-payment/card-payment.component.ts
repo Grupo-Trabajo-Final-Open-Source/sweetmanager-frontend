@@ -3,6 +3,7 @@ import {Payment} from "../../models/payment.entity";
 import {UserService} from "../../../iam/services/user.service";
 import {Router} from "@angular/router";
 import {User} from "../../../iam/models/user.entity";
+import {Subscription} from "../../models/subscription.entity";
 
 @Component({
   selector: 'app-card-payment',
@@ -19,14 +20,19 @@ export class CardPaymentComponent {
   cvc: number = 0;
   email: string = '';
   users: Array<User> = [];
+  // Card Subscription Attributes
+  subscriptionCard: any = new Subscription();
 
-  idSubscription: number = 0;
+  idSubscription: any = '';
 
   constructor(private userService: UserService, private router: Router) {
   }
 
-  pay(){
+  ngOnInit(){
+    this.idSubscription = localStorage.getItem('idSubscription');
+  }
 
+  pay(){
     this.userService.getUsers().subscribe((users: any) => {
       this.users = users;
 

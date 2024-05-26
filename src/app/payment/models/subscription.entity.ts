@@ -1,14 +1,14 @@
-export class SubscriptionEntity {
+export class Subscription {
   id: number;
   title: string;
   price: number;
   description: string;
 
-  constructor(){
-    this.id = 0;
-    this.title = '';
-    this.price = 0;
-    this.description = '';
+  constructor(id: number = 0, title: string = '', price: number = 0, description: string = ''){
+    this.id = id;
+    this.title = title;
+    this.price = price;
+    this.description = description;
   }
 
 }
