@@ -24,6 +24,12 @@ export class RegisterViewComponent {
   }
 
   register() {
+
+    if(this.companyName == '' || this.ruc == '' || this.emailUser == '' || this.passwordUser == '' || this.completeNameUser == '') {
+      alert("Please fill all the fields!");
+      return;
+    }
+
     let company = {
       name: this.companyName,
       ruc: this.ruc,
@@ -45,7 +51,7 @@ export class RegisterViewComponent {
           .subscribe((user: any) => {
             console.log(user);
             alert('User created correctly!')
-            this.router.navigate(['/payment/management']);
+            this.router.navigate(['/payment/subscription']);
           })
       })
   }

@@ -1,12 +1,14 @@
 export class Payment {
+  id: number;
   idTitular: number;
   titularName: string;
   targetAccount: string;
-  expirationDate: Date;
+  expirationDate: string;
   cvc: number;
   email: string;
 
-  constructor(titularName: string = '', targetAccount: string = '', expirationDate: Date = new Date(), cvc: number = 0, email: string = '', idTitular: number = 0) {
+  constructor(id: number = 0, titularName: string = '', targetAccount: string = '', expirationDate: string = '', cvc: number = 0, email: string = '', idTitular: number = 0) {
+    this.id = id;
     this.idTitular = idTitular;
     this.titularName = titularName;
     this.targetAccount = targetAccount;

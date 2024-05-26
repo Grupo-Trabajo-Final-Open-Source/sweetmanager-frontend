@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {catchError, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,11 @@ export class PaymentService {
   constructor(private http: HttpClient) { }
 
   getPayments(){
-    return this.http.get(`${this.baseUrl}/users`);
+    return this.http.get(`${this.baseUrl}/payments`);
   }
 
   createPayment(payment: any){
     return this.http.post(`${this.baseUrl}/payments`,payment);
   }
+
 }
