@@ -32,5 +32,39 @@
       "message": "Mensaje",
       "date": "Fecha"
     }
+  },
+  "control-panel": "Panel de Control",
+  "actions": {
+    "add": "Añadir",
+    "title": "Acciones",
+    "edit": "Editar",
+    "new": "Añadir",
+    "update": "Actualizar",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "confirm-delete": "¿Estás seguro de que deseas eliminar este elemento?",
+    "confirmation": "¿Confirmar accion?"
+  },
+  "notifSupply": {
+    "success": "¡Exito!",
+    "created": "Inventario creado",
+    "updated": "Inventario actualizado",
+    "deleted": "Inventario eliminado",
+    "warning": "¡Advertencia!",
+    "fields-required": "Se requieren todos los campos"
+  },
+  "manage-supplies": "Control de Inventarios",
+  "supply": {
+    "title": "Inventario",
+    "product": "Producto",
+    "product-required": "Un producto es requerido",
+    "quantity": "Cantidad",
+    "quantity-required": "Una cantidad es requerida",
+    "address": "Direccion",
+    "address-required": "Una direccion es requerida",
+    "expire": "Fecha de vencimiento",
+    "expire-required": "Una fecha de vencimiento es requerida",
+    "search": "Buscar..."
   }
 }

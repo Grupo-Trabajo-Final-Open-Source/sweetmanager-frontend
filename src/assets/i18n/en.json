@@ -32,5 +32,35 @@
       "message": "Message",
       "date": "Date"
     }
+  },
+  "control-panel": "Control Panel",
+  "actions": {
+    "add": "Add",
+    "title": "Actions",
+    "edit": "Edit",
+    "new": "New",
+    "update": "Update",
+    "create": "Create",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm-delete": "Are you sure you want to delete this item?",
+    "confirmation": "Confirm?"
+  },
+  "notifSupply": {
+    "success": "Success",
+    "created": "Supply Created",
+    "updated": "Supply Updated",
+    "deleted": "Supply Deleted",
+    "warning": "Warning",
+    "fields-required": "All fields must be filled"
+  },
+  "manage-supplies": "Manage Supplies",
+  "supply": {
+    "title": "Supply",
+    "product": "Product",
+    "quantity": "Quantity",
+    "address": "Address",
+    "expire": "Expiration Date",
+    "search": "Search..."
   }
 }
