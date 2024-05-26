@@ -20,3 +20,11 @@ tr.editable-row {
   }
   text-align: center;
 }
+
+.search{
+  display: flex;
+  height: 2rem;
+  width: 100%;
+  margin-left: 10px;
+  margin-bottom: 1rem;
+}

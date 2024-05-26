@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Supply} from "../../model/supply.entity";
 import {NgForm} from "@angular/forms";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-supply-create-and-edit',
@@ -17,7 +18,7 @@ export class SupplyCreateAndEditComponent {
   @ViewChild('supplyForm', {static: false}) supplyForm!: NgForm;
 
   // Methods
-  constructor() {
+  constructor(private datePipe: DatePipe) {
     this.supply = {} as Supply;
   }
 
@@ -26,6 +27,10 @@ export class SupplyCreateAndEditComponent {
     this.supply = {} as Supply;
     this.editMode = false;
     this.supplyForm.resetForm();
+  }
+
+  clearExpireDate(){
+    this.supply.expire = '';
   }
 
   // Event Handlers

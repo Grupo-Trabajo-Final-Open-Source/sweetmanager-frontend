@@ -14,6 +14,9 @@
                               (supplyUpdated)="onSupplyUpdated($event)"
                               [editMode]="isEditMode"
                               [supply]="supplyData" />
+  <div class="search">
+    <input [(ngModel)]="filterValue" (ngModelChange)="applyFilter()" placeholder="{{ 'supply.search' | translate }}">
+  </div>
   <!-- Data Table -->
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="id">
@@ -34,7 +37,7 @@
     </ng-container>
     <ng-container matColumnDef="expire">
       <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'supply.expire' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{element.expire}}</td>
+      <td *matCellDef="let element" mat-cell>{{element.expire | date:'dd/MM/yyyy'}}</td>
     </ng-container>
     <ng-container matColumnDef="actions">
       <th *matHeaderCellDef mat-header-cell>{{ 'actions.title' | translate }}</th>
