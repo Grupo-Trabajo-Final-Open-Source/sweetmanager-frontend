@@ -32,5 +32,19 @@
       "message": "Mensaje",
       "date": "Fecha"
     }
+  },
+  "payment": {
+    "management": {
+      "title": "Proceder con el Pago",
+      "titular-name": "Nombre del Titular de la Tarjeta",
+      "number-card": "Numero de Tarjeta",
+      "expiration-date": "Fecha de Vencimiento",
+      "security-code": "CVC",
+      "email": "Correo Electronico",
+      "confirm-button": "Confirmar Pago"
+    },
+    "subscription": {
+
+    }
   }
 }

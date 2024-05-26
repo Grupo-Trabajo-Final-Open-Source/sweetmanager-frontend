@@ -32,5 +32,19 @@
       "message": "Message",
       "date": "Date"
     }
+  },
+  "payment": {
+    "management": {
+      "title": "Proceed with the Payment",
+      "titular-name": "CardHolder Name",
+      "number-card": "Card Number",
+      "expiration-date": "Expiration Date",
+      "security-code": "CVC",
+      "email": "Email",
+      "confirm-button": "Confirm Payment"
+    },
+    "subscription": {
+
+    }
   }
 }

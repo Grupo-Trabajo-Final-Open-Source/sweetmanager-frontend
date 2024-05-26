@@ -6,38 +6,38 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <h2>Proceder con el Pago</h2>
+          <h2>{{ 'payment.management.title' | translate}}</h2>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <form>
           <mat-form-field class="full-width">
-            <mat-label>Nombre Titular de la Tarjeta</mat-label>
+            <mat-label>{{'payment.management.titular-name' | translate}}</mat-label>
             <input matInput type="text" name="titularName" [(ngModel)]="titularName" required>
           </mat-form-field>
           <br>
           <mat-form-field class="full-width">
-            <mat-label>Numero de Tarjeta</mat-label>
+            <mat-label>{{'payment.management.number-card' | translate}}</mat-label>
             <input matInput type="text" name="targetAccount" [(ngModel)]="targetAccount" required>
           </mat-form-field>
           <br>
           <mat-form-field class="mid-width space">
-            <mat-label>Fecha de Vencimiento</mat-label>
+            <mat-label>{{'payment.management.expiration-date' | translate}}</mat-label>
             <input matInput name="expirationDate" type="text" [(ngModel)]="expirationDate" required>
           </mat-form-field>
 
           <mat-form-field class="mid-width">
-            <mat-label>Codigo de Seguridad</mat-label>
+            <mat-label>{{'payment.management.security-code' | translate}}</mat-label>
             <input matInput type="text" name="cvc" [(ngModel)]="cvc" required>
           </mat-form-field>
           <br>
           <mat-form-field class="full-width">
-            <mat-label>Correo Electronico</mat-label>
+            <mat-label>{{'payment.management.email' | translate}}</mat-label>
             <input matInput type="email" name="email" [(ngModel)]="email" required>
           </mat-form-field>
           <br>
           <div class="center-button">
-            <mat-button-toggle (click)="pay()" class="btn btn-primary">Confirmar</mat-button-toggle>
+            <mat-button-toggle (click)="pay()" class="btn btn-primary">{{'payment.management.confirm-button' | translate}}</mat-button-toggle>
           </div>
 
         </form>
