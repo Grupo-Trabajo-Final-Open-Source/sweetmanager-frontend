@@ -1,7 +1,7 @@
-import { PaymentEntity } from './payment.entity';
+import { Payment } from './payment.entity';
 
 describe('PaymentEntity', () => {
   it('should create an instance', () => {
-    expect(new PaymentEntity()).toBeTruthy();
+    expect(new Payment()).toBeTruthy();
   });
 });
