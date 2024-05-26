@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Supply} from "../../model/supply.entity";
 import {NgForm} from "@angular/forms";
-import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-supply-create-and-edit',
