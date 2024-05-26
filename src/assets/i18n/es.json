@@ -1,71 +1,106 @@
 {
-  "iam": {
-    "log-in":{
-      "title-card": "Bienvenido a Sweet Manager",
-      "tabs-title": "Iniciar sesión",
-      "checkbox-password": "Recordame mi contraseña",
-      "button-login": "Acceder",
-      "labels": {
-        "email": "Correo",
-        "password": "Contraseña"
-      }
-    },
-    "sign-in": {
-      "title-card": "Bienvenido a Sweet Manager",
-      "tabs-title": "Registrarse",
-      "checkbox-privacy": "Al registrarte, estas de acuerdo con nuestros Términos y Condiciones",
-      "button-sign-in": "Empezar",
-      "labels": {
-        "company-name": "Nombre de la empresa",
-        "ruc": "RUC",
-        "full-name": "Nombre y Apellido (Gerente)",
-        "email": "Correo",
-        "password": "Contraseña"
-      }
-    }
-  },
-  "interaction": {
-    "title": "Notificaciones",
-    "attributes": {
-      "id": "Código",
-      "title": "Título",
-      "message": "Mensaje",
-      "date": "Fecha"
-    }
-  },
-  "payment": {
-    "management": {
-      "title": "Proceder con el Pago",
-      "titular-name": "Nombre del Titular de la Tarjeta",
-      "number-card": "Numero de Tarjeta",
-      "expiration-date": "Fecha de Vencimiento",
-      "security-code": "CVC",
-      "email": "Correo Electronico",
-      "confirm-button": "Confirmar Pago"
-    },
-    "subscription": {
-      "title": "Seleccione un Plan",
-      "cards": {
-        "basic": {
-          "title": "BASICO",
-          "price-month": "mes",
-          "description": "Base de Datos con 500GB de almacenamiento",
-          "technical-support": "Soporte Técnico Limitado"
-        },
-        "regular": {
-          "title": "REGULAR",
-          "price-month": "mes",
-          "description": "Base de datos con 1TB de almacenamiento",
-          "technical-support": "Soporte Técnico 24/7"
-        },
-        "premium": {
-          "title": "PREMIUM",
-          "price-month": "mes",
-          "description": "Base de Datos con 5TB de almacenamiento",
-          "technical-support": "Soporte Técnico 24/7"
+    "iam": {
+      "log-in":{
+        "title-card": "Bienvenido a Sweet Manager",
+        "tabs-title": "Iniciar sesión",
+        "checkbox-password": "Recordame mi contraseña",
+        "button-login": "Acceder",
+        "labels": {
+          "email": "Correo",
+          "password": "Contraseña"
         }
       },
-      "button": "Comenzar Prueba"
+      "sign-in": {
+        "title-card": "Bienvenido a Sweet Manager",
+        "tabs-title": "Registrarse",
+        "checkbox-privacy": "Al registrarte, estas de acuerdo con nuestros Términos y Condiciones",
+        "button-sign-in": "Empezar",
+        "labels": {
+          "company-name": "Nombre de la empresa",
+          "ruc": "RUC",
+          "full-name": "Nombre y Apellido (Gerente)",
+          "email": "Correo",
+          "password": "Contraseña"
+        }
+      }
+    },
+    "interaction": {
+      "title": "Notificaciones",
+      "attributes": {
+        "id": "Código",
+        "title": "Título",
+        "message": "Mensaje",
+        "date": "Fecha"
+      }
+    },
+    "payment": {
+      "management": {
+        "title": "Proceder con el Pago",
+        "titular-name": "Nombre del Titular de la Tarjeta",
+        "number-card": "Numero de Tarjeta",
+        "expiration-date": "Fecha de Vencimiento",
+        "security-code": "CVC",
+        "email": "Correo Electronico",
+        "confirm-button": "Confirmar Pago"
+      },
+      "subscription": {
+        "title": "Seleccione un Plan",
+        "cards": {
+          "basic": {
+            "title": "BASICO",
+            "price-month": "mes",
+            "description": "Base de Datos con 500GB de almacenamiento",
+            "technical-support": "Soporte Técnico Limitado"
+          },
+          "regular": {
+            "title": "REGULAR",
+            "price-month": "mes",
+            "description": "Base de datos con 1TB de almacenamiento",
+            "technical-support": "Soporte Técnico 24/7"
+          },
+          "premium": {
+            "title": "PREMIUM",
+            "price-month": "mes",
+            "description": "Base de Datos con 5TB de almacenamiento",
+            "technical-support": "Soporte Técnico 24/7"
+          }
+        },
+        "button": "Comenzar Prueba"
+      }
+    },
+    "control-panel": "Panel de Control",
+    "actions": {
+      "add": "Añadir",
+      "title": "Acciones",
+      "edit": "Editar",
+      "new": "Añadir",
+      "update": "Actualizar",
+      "create": "Crear",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "confirm-delete": "¿Estás seguro de que deseas eliminar este elemento?",
+      "confirmation": "¿Confirmar accion?"
+    },
+    "notifSupply": {
+      "success": "¡Exito!",
+      "created": "Inventario creado",
+      "updated": "Inventario actualizado",
+      "deleted": "Inventario eliminado",
+      "warning": "¡Advertencia!",
+      "fields-required": "Se requieren todos los campos"
+    },
+    "manage-supplies": "Control de Inventarios",
+    "supply": {
+      "title": "Inventario",
+      "product": "Producto",
+      "product-required": "Un producto es requerido",
+      "quantity": "Cantidad",
+      "quantity-required": "Una cantidad es requerida",
+      "address": "Direccion",
+      "address-required": "Una direccion es requerida",
+      "expire": "Fecha de vencimiento",
+      "expire-required": "Una fecha de vencimiento es requerida",
+      "search": "Buscar..."
     }
-  }
 }
+  

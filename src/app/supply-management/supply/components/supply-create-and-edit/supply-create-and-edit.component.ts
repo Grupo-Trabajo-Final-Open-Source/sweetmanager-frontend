@@ -28,6 +28,10 @@ export class SupplyCreateAndEditComponent {
     this.supplyForm.resetForm();
   }
 
+  clearExpireDate(){
+    this.supply.expire = '';
+  }
+
   // Event Handlers
   onSubmit() {
     if (this.supplyForm.form.valid) {

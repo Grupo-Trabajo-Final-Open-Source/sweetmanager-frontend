@@ -1,71 +1,102 @@
 {
-  "iam": {
-    "log-in":{
-      "title-card": "Welcome to Sweet Manager",
-      "tabs-title": "Log In",
-      "checkbox-password": "Remember password",
-      "button-login": "Log In",
-      "labels": {
-        "email": "Email",
-        "password": "Password"
-      }
-    },
-    "sign-in": {
-      "title-card": "Welcome to Sweet Manager",
-      "tabs-title": "Sign In",
-      "checkbox-privacy": "By signing up, you agree to the Terms of Service and Privacy Policy",
-      "button-sign-in": "Register Account",
-      "labels": {
-        "company-name": "Company Name",
-        "ruc": "RUC",
-        "full-name": "Name and LastName (Owner)",
-        "email": "Email",
-        "password": "Password"
-      }
-    }
-  },
-  "interaction": {
-    "title": "Notifications",
-    "attributes": {
-      "id": "Id",
-      "title": "Title",
-      "message": "Message",
-      "date": "Date"
-    }
-  },
-  "payment": {
-    "management": {
-      "title": "Proceed with the Payment",
-      "titular-name": "CardHolder Name",
-      "number-card": "Card Number",
-      "expiration-date": "Expiration Date",
-      "security-code": "CVC",
-      "email": "Email",
-      "confirm-button": "Confirm Payment"
-    },
-    "subscription": {
-      "title": "Select a Plan",
-      "cards": {
-        "basic": {
-          "title": "BASIC",
-          "price-month": "month",
-          "description": "DataBase with 500GB of storage",
-          "technical-support": "Restricted Technical Support"
-        },
-        "regular": {
-          "title": "REGULAR",
-          "price-month": "month",
-          "description": "DataBase with 1TB of storage",
-          "technical-support": "Technical Support 24/7"
-        },
-        "premium": {
-          "title": "PREMIUM",
-          "price-month": "month",
-          "description": "DataBase with 5TB of storage",
-          "technical-support": "Technical Support 24/7"
+    "iam": {
+      "log-in":{
+        "title-card": "Welcome to Sweet Manager",
+        "tabs-title": "Log In",
+        "checkbox-password": "Remember password",
+        "button-login": "Log In",
+        "labels": {
+          "email": "Email",
+          "password": "Password"
         }
       },
-      "button": "Get Started"
+      "sign-in": {
+        "title-card": "Welcome to Sweet Manager",
+        "tabs-title": "Sign In",
+        "checkbox-privacy": "By signing up, you agree to the Terms of Service and Privacy Policy",
+        "button-sign-in": "Register Account",
+        "labels": {
+          "company-name": "Company Name",
+          "ruc": "RUC",
+          "full-name": "Name and LastName (Owner)",
+          "email": "Email",
+          "password": "Password"
+        }
+      }
+    },
+    "interaction": {
+      "title": "Notifications",
+      "attributes": {
+        "id": "Id",
+        "title": "Title",
+        "message": "Message",
+        "date": "Date"
+      }
+    },
+    "payment": {
+      "management": {
+        "title": "Proceed with the Payment",
+        "titular-name": "CardHolder Name",
+        "number-card": "Card Number",
+        "expiration-date": "Expiration Date",
+        "security-code": "CVC",
+        "email": "Email",
+        "confirm-button": "Confirm Payment"
+      },
+      "subscription": {
+        "title": "Select a Plan",
+        "cards": {
+          "basic": {
+            "title": "BASIC",
+            "price-month": "month",
+            "description": "DataBase with 500GB of storage",
+            "technical-support": "Restricted Technical Support"
+          },
+          "regular": {
+            "title": "REGULAR",
+            "price-month": "month",
+            "description": "DataBase with 1TB of storage",
+            "technical-support": "Technical Support 24/7"
+          },
+          "premium": {
+            "title": "PREMIUM",
+            "price-month": "month",
+            "description": "DataBase with 5TB of storage",
+            "technical-support": "Technical Support 24/7"
+          }
+        },
+        "button": "Get Started"
+      }
+    },
+    
+    "control-panel": "Control Panel",
+    "actions": {
+      "add": "Add",
+      "title": "Actions",
+      "edit": "Edit",
+      "new": "New",
+      "update": "Update",
+      "create": "Create",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "confirm-delete": "Are you sure you want to delete this item?",
+      "confirmation": "Confirm?"
+    },
+    "notifSupply": {
+      "success": "Success",
+      "created": "Supply Created",
+      "updated": "Supply Updated",
+      "deleted": "Supply Deleted",
+      "warning": "Warning",
+      "fields-required": "All fields must be filled"
+    },
+    "manage-supplies": "Manage Supplies",
+    "supply": {
+      "title": "Supply",
+      "product": "Product",
+      "quantity": "Quantity",
+      "address": "Address",
+      "expire": "Expiration Date",
+      "search": "Search..."
     }
-  }
 }
