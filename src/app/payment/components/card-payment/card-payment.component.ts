@@ -20,6 +20,8 @@ export class CardPaymentComponent {
   email: string = '';
   users: Array<User> = [];
 
+  idSubscription: number = 0;
+
   constructor(private userService: UserService, private router: Router) {
   }
 

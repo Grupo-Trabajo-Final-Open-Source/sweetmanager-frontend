@@ -4,12 +4,65 @@
 
 <div class="chart">
   <div class="center">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          <h2>Selecciona un Plan</h2>
-        </mat-card-title>
-      </mat-card-header>
+    <mat-card class="large-card">
+      <div class="header-mid">
+        <mat-card-header>
+          <mat-card-title><h1>Seleccione un Plan</h1></mat-card-title>
+        </mat-card-header>
+      </div>
+      <div class="content">
+        <!-- First Child Card -->
+        <mat-card class="small-card">
+          <mat-card-header>
+            <mat-card-title>
+              <h2>BASIC</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>$111.99 / month</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">Database with 500GB of storage</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">Restricted Technical Support</mat-checkbox>
+          </mat-card-content>
+          <br>
+          <div class="center">
+            <mat-button-toggle (click)="navigateToPaymentBasic()">Comenzar Prueba</mat-button-toggle>
+          </div>
+        </mat-card>
+        <!-- Second Child Card -->
+        <mat-card class="small-card">
+          <mat-card-header>
+            <mat-card-title>
+              <h2>REGULAR</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>$222.31 / month</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">Database with 1TB of storage</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">Technical Support 24/7</mat-checkbox>
+          </mat-card-content>
+          <br>
+          <div class="center">
+            <mat-button-toggle (click)="navigateToPaymentRegular()">Comenzar Prueba</mat-button-toggle>
+          </div>
+        </mat-card>
+        <!-- Third Child Card -->
+        <mat-card class="small-card">
+          <mat-card-header>
+            <mat-card-title>
+              <h2>PREMIUM</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>$370.54 / month</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">Database with 5TB of storage</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">Technical Support 24/7</mat-checkbox>
+          </mat-card-content>
+          <br>
+          <div class="center">
+            <mat-button-toggle (click)="navigateToPaymentPremium()">Comenzar Prueba</mat-button-toggle>
+          </div>
+        </mat-card>
+      </div>
     </mat-card>
   </div>
 </div>
@@ -28,5 +81,46 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .small-card {
+    width: 30%; /* Ajusta este valor según tus necesidades */
+    background-color: #add8e6;
+    height: 70%
+  }
+
+  .small-card:first-child {
+    background-color: #8B4513; /* Ajusta este valor según tus necesidades */
+  }
+
+  .small-card:nth-child(3) {
+    background-color: gold;
+  }
+
+  .small-card p:first-child {
+    font-size: 25px; /* Ajusta este valor según tus necesidades */
+  }
+
+  .large-card {
+    margin: 20px; /* Ajusta este valor según tus necesidades */
+    width: 60%;
+    height: 50%;
+    border-radius: 20px;
+    background: beige;
+  }
+
+  .header-mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 </style>
