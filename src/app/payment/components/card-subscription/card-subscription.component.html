@@ -7,7 +7,7 @@
     <mat-card class="large-card">
       <div class="header-mid">
         <mat-card-header>
-          <mat-card-title><h1>Seleccione un Plan</h1></mat-card-title>
+          <mat-card-title><h1>{{'payment.subscription.title' | translate}}</h1></mat-card-title>
         </mat-card-header>
       </div>
       <div class="content">
@@ -15,51 +15,51 @@
         <mat-card class="small-card">
           <mat-card-header>
             <mat-card-title>
-              <h2>BASIC</h2>
+              <h2>{{'payment.subscription.cards.basic.title' | translate}}</h2>
             </mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>$111.99 / month</p>
-            <mat-checkbox checked (click)="$event.preventDefault()">Database with 500GB of storage</mat-checkbox>
-            <mat-checkbox checked (click)="$event.preventDefault()">Restricted Technical Support</mat-checkbox>
+            <p>$111.99 / {{'payment.subscription.cards.basic.price-month' | translate}}</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.basic.description' | translate}}</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{ 'payment.subscription.cards.basic.technical-support' | translate }}</mat-checkbox>
           </mat-card-content>
           <br>
           <div class="center">
-            <mat-button-toggle (click)="navigateToPaymentBasic()">Comenzar Prueba</mat-button-toggle>
+            <mat-button-toggle (click)="navigateToPaymentBasic()">{{'payment.subscription.button' | translate}}</mat-button-toggle>
           </div>
         </mat-card>
         <!-- Second Child Card -->
         <mat-card class="small-card">
           <mat-card-header>
             <mat-card-title>
-              <h2>REGULAR</h2>
+              <h2>{{'payment.subscription.cards.regular.title' | translate}}</h2>
             </mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>$222.31 / month</p>
-            <mat-checkbox checked (click)="$event.preventDefault()">Database with 1TB of storage</mat-checkbox>
-            <mat-checkbox checked (click)="$event.preventDefault()">Technical Support 24/7</mat-checkbox>
+            <p>$222.31 / {{'payment.subscription.cards.regular.price-month' | translate}}</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.regular.description' | translate}}</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.regular.technical-support' | translate }}</mat-checkbox>
           </mat-card-content>
           <br>
           <div class="center">
-            <mat-button-toggle (click)="navigateToPaymentRegular()">Comenzar Prueba</mat-button-toggle>
+            <mat-button-toggle (click)="navigateToPaymentRegular()">{{ 'payment.subscription.button' |translate }}</mat-button-toggle>
           </div>
         </mat-card>
         <!-- Third Child Card -->
         <mat-card class="small-card">
           <mat-card-header>
             <mat-card-title>
-              <h2>PREMIUM</h2>
+              <h2>{{'payment.subscription.cards.premium.title' | translate}}</h2>
             </mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>$370.54 / month</p>
-            <mat-checkbox checked (click)="$event.preventDefault()">Database with 5TB of storage</mat-checkbox>
-            <mat-checkbox checked (click)="$event.preventDefault()">Technical Support 24/7</mat-checkbox>
+            <p>$370.54 / {{'payment.subscription.cards.premium.price-month' | translate}}</p>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.premium.description' | translate}}</mat-checkbox>
+            <mat-checkbox checked (click)="$event.preventDefault()">{{'payment.subscription.cards.premium.technical-support' | translate}}</mat-checkbox>
           </mat-card-content>
           <br>
           <div class="center">
-            <mat-button-toggle (click)="navigateToPaymentPremium()">Comenzar Prueba</mat-button-toggle>
+            <mat-button-toggle (click)="navigateToPaymentPremium()">{{'payment.subscription.button' | translate}}</mat-button-toggle>
           </div>
         </mat-card>
       </div>

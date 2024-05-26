@@ -44,7 +44,28 @@
       "confirm-button": "Confirm Payment"
     },
     "subscription": {
-
+      "title": "Select a Plan",
+      "cards": {
+        "basic": {
+          "title": "BASIC",
+          "price-month": "month",
+          "description": "DataBase with 500GB of storage",
+          "technical-support": "Restricted Technical Support"
+        },
+        "regular": {
+          "title": "REGULAR",
+          "price-month": "month",
+          "description": "DataBase with 1TB of storage",
+          "technical-support": "Technical Support 24/7"
+        },
+        "premium": {
+          "title": "PREMIUM",
+          "price-month": "month",
+          "description": "DataBase with 5TB of storage",
+          "technical-support": "Technical Support 24/7"
+        }
+      },
+      "button": "Get Started"
     }
   }
 }

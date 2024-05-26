@@ -44,7 +44,28 @@
       "confirm-button": "Confirmar Pago"
     },
     "subscription": {
-
+      "title": "Seleccione un Plan",
+      "cards": {
+        "basic": {
+          "title": "BASICO",
+          "price-month": "mes",
+          "description": "Base de Datos con 500GB de almacenamiento",
+          "technical-support": "Soporte Técnico Limitado"
+        },
+        "regular": {
+          "title": "REGULAR",
+          "price-month": "mes",
+          "description": "Base de datos con 1TB de almacenamiento",
+          "technical-support": "Soporte Técnico 24/7"
+        },
+        "premium": {
+          "title": "PREMIUM",
+          "price-month": "mes",
+          "description": "Base de Datos con 5TB de almacenamiento",
+          "technical-support": "Soporte Técnico 24/7"
+        }
+      },
+      "button": "Comenzar Prueba"
     }
   }
 }
