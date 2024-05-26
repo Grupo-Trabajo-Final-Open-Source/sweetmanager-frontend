@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Payment} from "../../models/payment.entity";
 import {UserService} from "../../../iam/services/user.service";
 import {Router} from "@angular/router";
 import {User} from "../../../iam/models/user.entity";
