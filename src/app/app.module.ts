@@ -47,6 +47,10 @@ import { LanguageSwitcherComponent } from './public/components/language-switcher
 import {Observable} from "rxjs";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import { ToolbarContentComponent } from './public/components/toolbar-content/toolbar-content.component';
+
+import { CardPaymentComponent } from './payment/components/card-payment/card-payment.component';
+import { CardSubscriptionComponent } from './payment/components/card-subscription/card-subscription.component';
+
 import {
   MatDatepicker,
   MatDatepickerInput,
@@ -55,6 +59,7 @@ import {
 } from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {DatePipe} from "@angular/common";
+
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -92,6 +97,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NotificationTableComponent,
     LanguageSwitcherComponent,
     ToolbarContentComponent,
+    CardPaymentComponent,
+    CardSubscriptionComponent,
   ],
   imports: [
     BrowserModule,
