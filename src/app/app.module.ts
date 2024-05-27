@@ -68,6 +68,8 @@ import {CompanyDetailsComponent} from "./profile/company-workers/components/comp
 import {
   WorkersManagementComponent
 } from "./profile/company-workers/components/workers-management/workers-management.component";
+import {ProfileImageComponent} from "./profile/profile/components/profile-image/profile-image.component";
+import {ProfileDetailsComponent} from "./profile/profile/components/profile-details/profile-details.component";
 
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
@@ -108,7 +110,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToolbarContentComponent,
     CardPaymentComponent,
     CardSubscriptionComponent,
-    CompanyWorkersViewComponent
+    CompanyWorkersViewComponent,
+    ProfileViewComponent
   ],
   imports: [
     BrowserModule,
@@ -154,7 +157,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     MatButtonToggleGroup,
-    ProfileViewComponent,
     MatDatepickerToggle,
     MatDatepicker,
     MatDatepickerInput,
@@ -163,7 +165,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatIconButton,
     CompanyLogoComponent,
     CompanyDetailsComponent,
-    WorkersManagementComponent
+    WorkersManagementComponent,
+    ProfileImageComponent,
+    ProfileDetailsComponent
   ],
   providers: [
     DatePipe,

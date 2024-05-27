@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import {ProfileImageComponent} from "../../components/profile-image/profile-image.component";
-import {ProfileDetailsComponent} from "../../components/profile-details/profile-details.component";
 
 @Component({
   selector: 'app-profile-view',
-  standalone: true,
-  imports: [
-    ProfileImageComponent,
-    ProfileDetailsComponent
-  ],
   templateUrl: './profile-view.component.html',
   styleUrl: './profile-view.component.css'
 })
 export class ProfileViewComponent {
-
+  options = [
+    {path: '/monitoring/rooms', title: 'Room Management'},
+    {path: '/dashboard/panel', title: 'Reports View'},
+    {path: '/supply-management/supplies', title: 'Supplies'},
+    {path: 'profile/company', title: 'My Company'},
+    {path: 'profile/user', title: 'My profile'}
+  ]
+  constructor() {
+  }
 }
