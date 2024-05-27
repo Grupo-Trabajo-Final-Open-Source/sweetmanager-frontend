@@ -70,6 +70,10 @@ import {
 } from "./profile/company-workers/components/workers-management/workers-management.component";
 import {ProfileImageComponent} from "./profile/profile/components/profile-image/profile-image.component";
 import {ProfileDetailsComponent} from "./profile/profile/components/profile-details/profile-details.component";
+import { ControlPanelViewComponent } from './dashboard/control-panel/pages/control-panel-view/control-panel-view.component';
+import { ChartsCardComponent } from './dashboard/control-panel/components/charts-card/charts-card.component';
+import { SuppliersCardComponent } from './dashboard/control-panel/components/suppliers-card/suppliers-card.component';
+import { ClientCardComponent } from './dashboard/control-panel/components/client-card/client-card.component';
 
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
@@ -111,7 +115,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     CardPaymentComponent,
     CardSubscriptionComponent,
     CompanyWorkersViewComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    ControlPanelViewComponent,
+    ChartsCardComponent,
+    SuppliersCardComponent,
+    ClientCardComponent
   ],
   imports: [
     BrowserModule,
