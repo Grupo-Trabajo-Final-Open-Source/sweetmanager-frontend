@@ -2,7 +2,6 @@
 
 div.page-container {
   background-color: #F8F8F8;
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,7 +11,7 @@ div.page-container {
 
 div.main-container {
   background-color: #F8F8F8;
-  margin-top: 5%;
+  margin-top: 1%;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -20,7 +19,7 @@ div.main-container {
 }
 
 div.grid-charts-container{
-  height: 77vh;
+  height: 72vh;
 }
 
 div.title-container p.profile-title{
