@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container p.title-panel-control {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Nunito', sans-serif;
+}
+
+.title-container p.title-statistical-reports {
+  font-size: 25px;
+  font-weight: bold;
+  color: #4A845B;
+  font-family: 'Nunito', sans-serif;
+}
+
+.col.monthly-expenses {
+  width: 50%;
+  height: 50%;
+}
+
+.col.monthly-income {
+  width: 50%;
+  height: 50%;
+}
+
+.col room-chart {
+  width: 50%;
+  height: 50%;
+}
+
+
+
+
+
