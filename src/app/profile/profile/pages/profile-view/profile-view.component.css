@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+div.page-container {
+  background-color: #F8F8F8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+div.main-container {
+  background-color: #F8F8F8;
+  margin-top: 5%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+div.grid-charts-container{
+  height: 77vh;
+}
+
+div.title-container p.profile-title{
+  font-size: 2em;
+  margin-left: -279%;
+  margin-top: 8%;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Nunito', sans-serif;
+}
+
+div.grid-charts-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+  margin: 0.8em auto;
+  width: 84%;
+  padding: 0.9em;
+  border-radius: 1.4em;
+  box-shadow: 0 0.28em 0.28em 0 rgba(0, 0, 0, 0.25);
+}
+
+div.grid-charts-container .profile-image-container {
+  transform: translate(-188%, 0);
+}
+
+@media (max-width: 1240px) {
+  div.grid-charts-container{
+    height: 137vh;
+  }
+  div.title-container p.profile-title {
+    margin-left: -14%;
+  }
+  div.grid-charts-container .profile-image-container {
+    transform: translateX(-5%);
+  }
+}
+
+
+
+
+
+

@@ -31,7 +31,7 @@ import {MatIcon} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
-import {MatAnchor, MatButton} from "@angular/material/button";
+import {MatAnchor, MatButton, MatIconButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
 import { RoomCreateAndEditComponent } from './monitoring/rooms/components/room-create-and-edit/room-create-and-edit.component';
 import { RoomManagementComponent } from './monitoring/rooms/pages/room-management/room-management.component';
@@ -47,6 +47,23 @@ import { LanguageSwitcherComponent } from './public/components/language-switcher
 import {Observable} from "rxjs";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import { ToolbarContentComponent } from './public/components/toolbar-content/toolbar-content.component';
+import {
+    CompanyWorkersViewComponent
+} from "./profile/company-workers/pages/company-workers-view/company-workers-view.component";
+import {ProfileViewComponent} from "./profile/profile/pages/profile-view/profile-view.component";
+
+import { CardPaymentComponent } from './payment/components/card-payment/card-payment.component';
+import { CardSubscriptionComponent } from './payment/components/card-subscription/card-subscription.component';
+
+import {
+  MatDatepicker,
+  MatDatepickerInput,
+  MatDatepickerModule,
+  MatDatepickerToggle
+} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {DatePipe} from "@angular/common";
+
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -84,6 +101,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NotificationTableComponent,
     LanguageSwitcherComponent,
     ToolbarContentComponent,
+    CardPaymentComponent,
+    CardSubscriptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -128,9 +147,18 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    MatButtonToggleGroup
+    MatButtonToggleGroup,
+    CompanyWorkersViewComponent,
+    ProfileViewComponent,
+    MatDatepickerToggle,
+    MatDatepicker,
+    MatDatepickerInput,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconButton
   ],
   providers: [
+    DatePipe,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
