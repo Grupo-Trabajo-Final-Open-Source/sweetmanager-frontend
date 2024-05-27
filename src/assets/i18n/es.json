@@ -101,6 +101,36 @@
       "expire": "Fecha de vencimiento",
       "expire-required": "Una fecha de vencimiento es requerida",
       "search": "Buscar..."
+    },
+  "profile":
+  {
+    "user": {
+      "title": "Mi Perfil",
+      "name": "Nombre",
+      "change-name": "Cambiar nombre",
+      "email": "Correo",
+      "change-email": "Cambiar correo",
+      "company": "Empresa",
+      "view-company": "Ver empresa",
+      "role": "Rol dentro de la empresa",
+      "change-role": "Cambiar rol",
+      "password": "Contraseña",
+      "account": "Cuenta",
+      "delete-account": "Eliminar cuenta",
+      "notifications": "Notificaciones"
+    },
+    "company": {
+      "my-company": "Mi Empresa",
+      "business-name": "Nombre de Negocio",
+      "change-business-name": "Cambiar Nombre de Empresa",
+      "RUC": "RUC",
+      "change-RUC": "Cambiar RUC",
+      "company": "Empresa",
+      "delete-company": "Eliminar Empresa",
+      "workers": "Trabajadores",
+      "search-workers": "Buscar trabajadores",
+      "invite-workers": "Invitar trabajadores",
+      "view-more": "Ver más"
     }
+  }
 }
-  

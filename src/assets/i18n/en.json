@@ -68,7 +68,7 @@
         "button": "Get Started"
       }
     },
-    
+
     "control-panel": "Control Panel",
     "actions": {
       "add": "Add",
@@ -98,5 +98,36 @@
       "address": "Address",
       "expire": "Expiration Date",
       "search": "Search..."
+    },
+  "profile":
+  {
+    "user": {
+      "title": "My Profile",
+      "name": "Name",
+      "change-name": "Change name",
+      "email": "Email",
+      "change-email": "Change email",
+      "company": "Company",
+      "view-company": "View company",
+      "role": "Role within the company",
+      "change-role": "Change role",
+      "password": "Password",
+      "account": "Account",
+      "delete-account": "Delete account",
+      "notifications": "Notifications"
+    },
+    "company": {
+      "my-company": "My Company",
+      "business-name": "Business Name",
+      "change-business-name": "Change Business Name",
+      "RUC": "RUC",
+      "change-RUC": "Change RUC",
+      "company": "Company",
+      "delete-company": "Delete Company",
+      "workers": "Workers",
+      "search-workers": "Search workers",
+      "invite-workers": "Invite workers",
+      "view-more": "View more"
     }
+  }
 }
