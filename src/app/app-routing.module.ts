@@ -7,6 +7,10 @@ import {SuppliesComponent} from "./supply-management/supply/pages/supplies/suppl
 import {NotificationTableComponent} from "./interaction/components/notification-table/notification-table.component";
 import {CardPaymentComponent} from "./payment/components/card-payment/card-payment.component";
 import {CardSubscriptionComponent} from "./payment/components/card-subscription/card-subscription.component";
+import {
+  CompanyWorkersViewComponent
+} from "./profile/company-workers/pages/company-workers-view/company-workers-view.component";
+import {ProfileViewComponent} from "./profile/profile/pages/profile-view/profile-view.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/access-view', pathMatch: 'full'},
@@ -16,7 +20,9 @@ const routes: Routes = [
   {path: 'supply-management/supplies', component: SuppliesComponent},
   {path: 'interaction/notifications', component: NotificationTableComponent},
   {path: 'payment/management', component: CardPaymentComponent},
-  {path: 'payment/subscription', component: CardSubscriptionComponent}
+  {path: 'payment/subscription', component: CardSubscriptionComponent},
+  {path: 'profile/company', component: CompanyWorkersViewComponent},
+  {path: 'profile/user', component: ProfileViewComponent},
 ];
 
 @NgModule({
