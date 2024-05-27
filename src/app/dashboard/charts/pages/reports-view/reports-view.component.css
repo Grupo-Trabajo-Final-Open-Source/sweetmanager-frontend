@@ -1,18 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
-.page-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-}
-
 .main-container {
   background-color: #F8F8F8;
-  margin: 0;
-  padding: 0;
+  margin-top:-1%;
 }
 
 .title-container {
@@ -21,33 +11,23 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  transform: translate(325px, -290px);
+  margin-top:-0.5%;
 }
 
-.grid-charts-container {
+.grid-charts-container{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+  margin: auto;
+  transform:translateY(4%);
+  width: 63%;
+  height: 32em;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 0.28em 0.28em 0 rgba(0, 0, 0, 0.25);
 }
 
-.grid-charts-container .col {
-  margin-top: 150px;
-  margin-bottom: -150px;
-  margin-left: -350px;
-}
-
-.grid-charts-container .col.monthly-expenses {
-  transform:translate(-60px, 0px);
-}
-
-.grid-charts-container .col.monthly-income {
-  transform:translate(85px, 0px);
-}
-
-.grid-charts-container .col.room-chart {
-  transform:translate(-294px, 250px);
-}
 
 .title-container p.title-panel-control {
   font-size: 18px;
@@ -63,34 +43,48 @@
   font-family: 'Nunito', sans-serif;
 }
 
-.grid-charts-container {
-  background-color: #FFFFFF;
-  margin: 100px auto auto;
-  width: 885px;
-  height: 650px;
-  padding: 10px;
-  border-radius: 20px;
-  pointer-events: none;
+.grid-charts-container .col.monthly-expenses {
+  transform:translate(-60%, 10%);
+}
+
+.grid-charts-container .col.monthly-income {
+  transform:translate(60%, -90%);
+}
+
+.grid-charts-container .col.room-chart {
+  transform:translate(0%, -83%);
 }
 
 .return-button {
-  transform:translate(10px, -656px);
+  transform:translate(1em, -18em);
   padding: 4px;
   border-radius: 8px;
   background-color: #4D6443;
   content: "←";
-  font-size: 24px;
+  font-size: 25px;
   color: #F8F8F8;
   border-color: #4D6443;
 }
 
-.return-text {
-  transform:translate(5px, -650px);
-  display: inline-block;
-  vertical-align: middle;
-  color: #4D6443; /* Cambia el color del texto */
-  font-size: 14px; /* Cambia el tamaño de la fuente */
-  font-family: 'Nunito', sans-serif; /* Cambia la fuente a Nunito regular */
-  margin-left: 10px; /* Ajusta este valor según tus necesidades para separar el texto del botón */
-}
+@media (max-width:1280px){
+  .grid-charts-container .col.monthly-expenses {
+    transform:translate(0%, 0%);
+  }
 
+  .grid-charts-container .col.monthly-income {
+    transform:translate(0%, 0%);
+  }
+
+  .grid-charts-container .col.room-chart {
+    transform:translate(0%, 0%);
+  }
+
+  .grid-charts-container{
+    height: auto;
+  }
+
+  .return-button {
+    transform:translate(1em, -23.8em);
+  }
+
+}

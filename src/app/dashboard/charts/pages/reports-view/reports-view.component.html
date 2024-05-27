@@ -2,25 +2,24 @@
   <app-toolbar-content [options]="options"></app-toolbar-content>
 </header>
 
-<div class="page-container">
-  <div class="main-container">
-    <div class="grid-charts-container">
-      <div class="title-container">
-        <p class=" title-panel-control">CONTROL PANEL</p>
-        <p class="title-statistical-reports">Statistical reports</p>
-      </div>
-      <div class="col monthly-expenses">
-        <app-monthly-expenses></app-monthly-expenses>
-      </div>
-      <div class="col monthly-income">
-        <app-monthly-income></app-monthly-income>
-      </div>
-      <div class="col room-chart">
-        <app-room-chart></app-room-chart>
-      </div>
+<div class="main-container">
+  <div class="grid-charts-container">
+    <div class="title-container">
+      <p class=" title-panel-control">CONTROL PANEL</p>
+      <p class="title-statistical-reports">Statistical reports</p>
     </div>
-    <button class="return-button">←</button>
-    <p class="return-text">Return to Control Panel</p>
+    <div class="col monthly-expenses">
+      <app-monthly-expenses></app-monthly-expenses>
+    </div>
+    <div class="col monthly-income">
+      <app-monthly-income></app-monthly-income>
+    </div>
+    <div class="col room-chart">
+      <app-room-chart></app-room-chart>
+    </div>
   </div>
+  <button class="return-button">←</button>
 </div>
+
+
 
