@@ -6,16 +6,13 @@ div.page-container {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
 
 div.main-container {
   background-color: #F8F8F8;
-  margin-top: 1%;
   padding: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 div.company-container {
@@ -26,24 +23,33 @@ div.workers-container {
   height: 40vh;
 }
 
+
+div.company-title-container {
+  width: 100%; /* Ajusta este valor según tus necesidades */
+}
+
 div.company-title-container p.company-title {
   font-size: 1.7em;
-  margin-left: -297%;
-  margin-top: 2%;
+  margin-left: -77%;
+  margin-top: 0.7%;
   font-weight: bold;
   color: #000000;
   font-family: 'Nunito', sans-serif;
+  text-align: center; /* Alinea el texto al centro */
+}
+
+div.workers-title-container {
+  width: 100%; /* Ajusta este valor según tus necesidades */
 }
 
 div.workers-title-container p.workers-title {
   font-size: 1.7em;
-  margin-left: -468%;
-  margin-top: 2%;
+  margin-left: -78%; /* Ajusta este valor según tus necesidades */
   font-weight: bold;
   color: #000000;
   font-family: 'Nunito', sans-serif;
+  text-align: center; /* Alinea el texto al centro */
 }
-
 div.company-container, div.workers-container {
   display: flex;
   flex-direction: column;
@@ -57,7 +63,12 @@ div.company-container, div.workers-container {
 }
 
 @media (max-width: 1240px) {
-  div.company-title-container p.company-title,
+
+  div.company-title-container p.company-title{
+    margin-left: -7%;
+    margin-top: 2%;
+  }
+
   div.workers-title-container p.workers-title {
     margin-left: -14%;
     margin-top: 2%;

@@ -6,12 +6,10 @@ div.page-container {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
 
 div.main-container {
   background-color: #F8F8F8;
-  margin-top: 1%;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -22,13 +20,19 @@ div.grid-charts-container{
   height: 72vh;
 }
 
-div.title-container p.profile-title{
+
+div.title-container {
+  width: 100%; /* Ajusta este valor según tus necesidades */
+}
+
+div.title-container p.profile-title {
   font-size: 2em;
-  margin-left: -279%;
-  margin-top: 8%;
+  margin-top: 0.8%;
+  margin-left: -66%;
   font-weight: bold;
   color: #000000;
   font-family: 'Nunito', sans-serif;
+  text-align: center; /* Alinea el texto al centro */
 }
 
 div.grid-charts-container{
@@ -52,7 +56,7 @@ div.grid-charts-container .profile-image-container {
     height: 137vh;
   }
   div.title-container p.profile-title {
-    margin-left: -14%;
+    margin-left: -5%;
   }
   div.grid-charts-container .profile-image-container {
     transform: translateX(-5%);
