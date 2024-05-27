@@ -63,6 +63,13 @@ import {
 } from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {DatePipe} from "@angular/common";
+import {CompanyLogoComponent} from "./profile/company-workers/components/company-logo/company-logo.component";
+import {CompanyDetailsComponent} from "./profile/company-workers/components/company-details/company-details.component";
+import {
+  WorkersManagementComponent
+} from "./profile/company-workers/components/workers-management/workers-management.component";
+import {ProfileImageComponent} from "./profile/profile/components/profile-image/profile-image.component";
+import {ProfileDetailsComponent} from "./profile/profile/components/profile-details/profile-details.component";
 
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
@@ -103,6 +110,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToolbarContentComponent,
     CardPaymentComponent,
     CardSubscriptionComponent,
+    CompanyWorkersViewComponent,
+    ProfileViewComponent
   ],
   imports: [
     BrowserModule,
@@ -148,14 +157,17 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     MatButtonToggleGroup,
-    CompanyWorkersViewComponent,
-    ProfileViewComponent,
     MatDatepickerToggle,
     MatDatepicker,
     MatDatepickerInput,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatIconButton
+    MatIconButton,
+    CompanyLogoComponent,
+    CompanyDetailsComponent,
+    WorkersManagementComponent,
+    ProfileImageComponent,
+    ProfileDetailsComponent
   ],
   providers: [
     DatePipe,

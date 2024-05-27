@@ -15,7 +15,9 @@ export class SuppliesComponent implements OnInit, AfterViewInit {
   options = [
     {path: '/monitoring/rooms', title: 'Room Management'},
     {path: '/dashboard/panel', title: 'Reports View'},
-    {path: '/supply-management/supplies', title: 'Supplies'}
+    {path: '/supply-management/supplies', title: 'Supplies'},
+    {path: '/profile/company', title: 'My Company'},
+    {path: '/profile/user', title: 'My profile'}
   ]
   supplyData: Supply;
   dataSource!: MatTableDataSource<any>;
