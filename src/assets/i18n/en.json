@@ -102,7 +102,7 @@
   "profile":
   {
     "user": {
-      "title": "My Profile",
+      "my-profile": "My Profile",
       "name": "Name",
       "change-name": "Change name",
       "email": "Email",

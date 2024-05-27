@@ -102,10 +102,9 @@
       "expire-required": "Una fecha de vencimiento es requerida",
       "search": "Buscar..."
     },
-  "profile":
-  {
+  "profile": {
     "user": {
-      "title": "Mi Perfil",
+      "my-profile": "Mi Perfil",
       "name": "Nombre",
       "change-name": "Cambiar nombre",
       "email": "Correo",
@@ -121,7 +120,7 @@
     },
     "company": {
       "my-company": "Mi Empresa",
-      "business-name": "Nombre de Negocio",
+      "business-name": "Nombre del Negocio",
       "change-business-name": "Cambiar Nombre de Empresa",
       "RUC": "RUC",
       "change-RUC": "Cambiar RUC",
