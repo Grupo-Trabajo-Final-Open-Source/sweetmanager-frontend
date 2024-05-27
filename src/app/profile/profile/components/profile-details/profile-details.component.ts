@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-profile-details',
   standalone: true,
-  imports: [],
+    imports: [
+        TranslateModule
+    ],
   templateUrl: './profile-details.component.html',
   styleUrl: './profile-details.component.css'
 })
