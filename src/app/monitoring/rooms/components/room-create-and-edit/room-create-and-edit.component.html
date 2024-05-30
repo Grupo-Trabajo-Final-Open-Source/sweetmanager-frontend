@@ -1,13 +1,14 @@
-<h2>{{ editMode ? 'Edit Room' : 'New Room' }}</h2>
+<h2>{{ editMode ? ('rooms-monitoring.view.titleEdit' | translate)
+  : ('rooms-monitoring.view.titleNew' | translate)}}</h2>
 <div class="form-section">
   <form (submit)="onSubmit()" #roomForm='ngForm' class="form-row">
 
     <mat-form-field>
-      <input matInput placeholder="Name" name="name" required [(ngModel)]="room.name">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.name' | translate }}" name="name" required [(ngModel)]="room.name">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Description" name="description" required [(ngModel)]="room.description">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.description' | translate }}" name="description" required [(ngModel)]="room.description">
     </mat-form-field>
 
     <mat-form-field>
@@ -15,36 +16,36 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Worker" name="worker" required [(ngModel)]="room.worker">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.worker' | translate }}" name="worker" required [(ngModel)]="room.worker">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Client" name="client" required [(ngModel)]="room.client">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.client' | translate }}" name="client" required [(ngModel)]="room.client">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="TotalTelevision" name="totalBeds" required [(ngModel)]="room.totalBeds">
+      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.totalbeds' | translate }}" name="totalBeds" required [(ngModel)]="room.totalBeds">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="TotalBathrooms" name="totalBathrooms" required [(ngModel)]="room.totalBathrooms">
+      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.totalbathrooms' | translate }}" name="totalBathrooms" required [(ngModel)]="room.totalBathrooms">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="TotalTelevision" name="totalTelevision" required [(ngModel)]="room.totalTelevision">
+      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.totaltelevision' | translate }}" name="totalTelevision" required [(ngModel)]="room.totalTelevision">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Status" name="status" required [(ngModel)]="room.status">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.status' | translate }}" name="status" required [(ngModel)]="room.status">
     </mat-form-field>
 
     <ng-container *ngIf="editMode; else elseTemplate">
-      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="primary">{{ 'rooms-monitoring.view.edit' | translate }}</button>
       <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
     </ng-container>
 
     <ng-template #elseTemplate>
-      <button mat-raised-button color="primary">Add</button>
+      <button mat-raised-button color="primary">{{ 'rooms-monitoring.view.add' | translate }}</button>
     </ng-template>
 
   </form>
