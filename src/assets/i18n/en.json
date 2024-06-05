@@ -68,7 +68,24 @@
         "button": "Get Started"
       }
     },
-
+    "rooms-monitoring": {
+      "view": {
+        "id": "ide",
+        "name": "name",
+        "description": "description",
+        "worker": "worker",
+        "client": "client",
+        "totalbeds": "TotalBeds",
+        "totalbathrooms": "TotalBathrooms",
+        "totaltelevision": "TotalTelevision",
+        "status": "status",
+        "title": "Manage rooms",
+        "add": "add",
+        "edit": "edit",
+        "titleNew": "New Room",
+        "titleEdit": "Edit Room"
+      }
+    },
     "control-panel": "Control Panel",
     "actions": {
       "add": "Add",

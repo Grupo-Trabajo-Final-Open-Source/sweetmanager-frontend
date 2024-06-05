@@ -3,7 +3,7 @@
 </header>
 
 <div class="table-wrapper">
-  <h1>Rooms</h1>
+  <h1>{{ 'rooms-monitoring.view.title' | translate }}</h1>
 
   <!--Add/Edit Form-->
   <app-room-create-and-edit (editCanceled)="onCancelEdit()"
@@ -20,52 +20,52 @@
     </ng-container>
 
     <ng-container matColumnDef="name">
-      <th *matHeaderCellDef mat-header-cell>Name</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.name' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
     </ng-container>
 
     <ng-container matColumnDef="description">
-      <th *matHeaderCellDef mat-header-cell>Description</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.description' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.description }}</td>
     </ng-container>
 
     <ng-container matColumnDef="price">
-      <th *matHeaderCellDef mat-header-cell>Price</th>
+      <th *matHeaderCellDef mat-header-cell>price</th>
       <td *matCellDef="let element" mat-cell>{{ element.price }}</td>
     </ng-container>
 
     <ng-container matColumnDef="worker">
-      <th *matHeaderCellDef mat-header-cell>Worker</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.worker' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.worker }}</td>
     </ng-container>
 
     <ng-container matColumnDef="client">
-      <th *matHeaderCellDef mat-header-cell>Client</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.client' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.client }}</td>
     </ng-container>
 
     <ng-container matColumnDef="totalBeds">
-      <th *matHeaderCellDef mat-header-cell>Total Beds</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.totalbeds' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.totalBeds }}</td>
     </ng-container>
 
     <ng-container matColumnDef="totalBathrooms">
-      <th *matHeaderCellDef mat-header-cell>Total Bathrooms</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.totalbathrooms' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.totalBathrooms }}</td>
     </ng-container>
 
     <ng-container matColumnDef="totalTelevision">
-      <th *matHeaderCellDef mat-header-cell>Total Television</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.totaltelevision' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.totalTelevision }}</td>
     </ng-container>
 
     <ng-container matColumnDef="status">
-      <th *matHeaderCellDef mat-header-cell>Status</th>
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.status' | translate }}</th>
       <td *matCellDef="let element" mat-cell>{{ element.status }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th *matHeaderCellDef mat-header-cell> Actions</th>
+      <th *matHeaderCellDef mat-header-cell>Actions</th>
       <td *matCellDef="let element" mat-cell>
         <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
         <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
