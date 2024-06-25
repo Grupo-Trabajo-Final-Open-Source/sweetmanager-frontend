@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+main {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 1100px;
+  height: 600px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* Typography */
+.table-header p {
+  margin-top: -40px;
+  margin-bottom: 45px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1D8035;
+  font-family: 'Nunito', sans-serif;
+}
+
+.table-header h1 {
+  margin-top: -40px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Nunito', sans-serif;
+}
+
+th {
+  text-transform: capitalize;
+}
+
+/* Layout */
+.table-wrapper {
+  font-family: 'Nunito', sans-serif;
+  max-width: 1150px;
+  margin: 50px auto 0;
+}
+
+
+/* Table */
+.mat-elevation-z8 {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.mat-elevation-z8 th, .mat-elevation-z8 td {
+  padding: 12px 15px;
+}
+
+.mat-elevation-z8 th {
+  background-color:  #567d46;
+  color: white;
+}
+
+.mat-elevation-z8 td {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.mat-elevation-z8 tr:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* Paginator */
+.mat-paginator {
+  background-color:  #567d46;
+  color: white;
+}
+
+/* Search Bar */
+.search {
+  font-family: 'Roboto', sans-serif;
+}
+
+.search input {
+  margin-left: 20px;
+  margin-top: -2px;
+  margin-bottom: 4px;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: 0.5px;
+  border: none;
+  outline: none;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+

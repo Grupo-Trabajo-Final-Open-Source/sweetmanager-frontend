@@ -1,0 +1,57 @@
+<header>
+  <app-toolbar-content [options]="options"></app-toolbar-content>
+</header>
+
+<main>
+  <!-- Supplier catalogue -->
+  <div class="table-wrapper">
+    <div class="table-header">
+      <p>{{'control-panel' | translate}}</p>
+      <h1>{{'dashboard.manage-suppliers' | translate}}</h1>
+    </div>
+    <!--Add/Edit Form-->
+    <app-supplier-create-and-edit (editCanceled)="onCancelEdit()"
+                                  (supplierAdded)="onSupplierAdded($event)"
+                                  (supplierUpdated)="onSupplierUpdated($event)"
+                                  [editMode]="isEditMode"
+                                  [supplier]="supplierData" />
+    <div class="search">
+      <input [(ngModel)]="filterValue" (ngModelChange)="applyFilter()" placeholder="{{ 'dashboard.supplier.search' | translate }}">
+    </div>
+    <!-- Data Table -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>ID</th>
+        <td *matCellDef="let element" mat-cell>{{element.id}}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.supplier.name' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.name}}</td>
+      </ng-container>
+      <ng-container matColumnDef="contact">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.supplier.contact' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.contact}}</td>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.supplier.address' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.address}}</td>
+      </ng-container>
+      <ng-container matColumnDef="suppliedProduct">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.supplier.suppliedProduct' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.suppliedProduct}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>{{ 'actions.title' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>
+          <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+          <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+        </td>
+      </ng-container>
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': supplierData.id === row.id }" mat-row></tr>
+    </table>
+    <!-- Paginator child component-->
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+
+</main>
