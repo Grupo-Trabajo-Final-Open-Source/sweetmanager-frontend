@@ -1,0 +1,65 @@
+<header>
+  <app-toolbar-content [options]="options"></app-toolbar-content>
+</header>
+
+<main>
+  <!-- Customer catalogue -->
+  <div class="table-wrapper">
+    <div class="table-header">
+      <p>{{'control-panel' | translate}}</p>
+      <h1>{{'dashboard.manage-customers' | translate}}</h1>
+    </div>
+    <!--Add/Edit Form-->
+    <app-customer-create-and-edit (editCanceled)="onCancelEdit()"
+                                  (customerAdded)="onCustomerAdded($event)"
+                                  (customerUpdated)="onCustomerUpdated($event)"
+                                  [editMode]="isEditMode"
+                                  [customer]="customerData"></app-customer-create-and-edit>
+    <div class="search">
+      <input [(ngModel)]="filterValue" (ngModelChange)="applyFilter()" placeholder="{{ 'dashboard.customer.search' | translate }}">
+    </div>
+    <!-- Data Table -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>ID</th>
+        <td *matCellDef="let element" mat-cell>{{element.id}}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.customer.name' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.name}}</td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.customer.email' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.email}}</td>
+      </ng-container>
+      <ng-container matColumnDef="phoneNumber">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.customer.phoneNumber' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.phoneNumber}}</td>
+      </ng-container>
+      <ng-container matColumnDef="reservationDate">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.customer.reservationDate' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.reservationDate | date:'dd/MM/yyyy'}}</td>
+      </ng-container>
+      <ng-container matColumnDef="reservationTime">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.customer.reservationTime' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.reservationTime}}</td>
+      </ng-container>
+      <ng-container matColumnDef="cost">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'dashboard.customer.cost' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{element.cost}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>{{ 'actions.title' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>
+          <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+          <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+        </td>
+      </ng-container>
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': customerData.id === row.id }" mat-row></tr>
+    </table>
+    <!-- Paginator child component-->
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+
+</main>
