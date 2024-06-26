@@ -3,13 +3,13 @@ export class Supplier {
   name: string;
   contact: string;
   address: string;
-  suppliedProduct: string;
+  product: string;
 
-  constructor(id = 0, name = '', contact = '', address = '', suppliedProduct = '') {
+  constructor(id = 0, name = '', contact = '', address = '', product = '') {
     this.id = id;
     this.name = name;
     this.contact = contact;
     this.address = address;
-    this.suppliedProduct = suppliedProduct;
+    this.product = product;
   }
 }
