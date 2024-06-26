@@ -29,7 +29,7 @@ import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatIcon} from "@angular/material/icon";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatError, MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatAnchor, MatButton, MatIconButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
@@ -179,7 +179,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WorkersManagementComponent,
     ProfileImageComponent,
     ProfileDetailsComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatError
   ],
   providers: [
     DatePipe,

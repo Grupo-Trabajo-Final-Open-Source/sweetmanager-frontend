@@ -61,10 +61,10 @@ export class RegisterViewComponent extends BaseFormComponent implements OnInit {
           email: email,
           password: password,
           company: company.id,
-          role: ['ROLE_MANAGER']
+          roles: ['ROLE_MANAGER']
         }
 
-        const signUpRequest = new SignUpRequest(user.name, user.email, user.password, user.role, user.company);
+        const signUpRequest = new SignUpRequest(user.name, user.email, user.password, user.roles, user.company);
 
         this.authenticationService.signUp(signUpRequest);
 

@@ -50,7 +50,7 @@ export class LoginViewComponent extends BaseFormComponent implements OnInit{
     });
   }
 
-  onSUbmit(){
+  onSubmit(){
     if (this.form.invalid) return;
     let email = this.form.value.email;
     let password = this.form.value.password;

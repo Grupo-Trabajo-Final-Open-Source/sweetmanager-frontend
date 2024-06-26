@@ -61,6 +61,7 @@ export class AuthenticationService {
           this.router.navigate(['/access-view']).then();
         }
       });
+
   }
 
   /**
@@ -78,7 +79,8 @@ export class AuthenticationService {
           this.signedInUsername.next(response.email);
           localStorage.setItem('token', response.token);
           console.log(`Signed in as ${response.email} with token ${response.token}`);
-          this.router.navigate(['/']).then();
+          alert("Successfully logged in!")
+          this.router.navigate(['/dashboard/panel']).then();
         },
         error: (error) => {
           console.error(`Error while signing in: ${error}`);
@@ -86,6 +88,7 @@ export class AuthenticationService {
           this.signedInUserId.next(0);
           this.signedInUsername.next('');
           localStorage.removeItem('token');
+          alert("User not found!")
           this.router.navigate(['/access-view']).then();
         }
       });
