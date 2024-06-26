@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './control-panel-view.component.css'
 })
 export class ControlPanelViewComponent {
-
+  options = [
+    {path: '/dashboard/panel', title: 'Reports View'},
+    {path: '/monitoring/rooms', title: 'Room Management'},
+    {path: '/supply-management/supplies', title: 'Supplies'},
+    {path: '/profile/company', title: 'My Company'},
+    {path: '/profile/user', title: 'My profile'}
+  ]
 }
