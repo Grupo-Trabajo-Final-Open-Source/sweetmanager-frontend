@@ -30,8 +30,8 @@
     </button>
     <mat-datepicker #picker></mat-datepicker>
     <ng-container *ngIf="editMode; else elseTemplate">
-      <button mat-raised-button color="primary">{{ 'dashboard.actions.update' | translate }}</button>
-      <button mat-raised-button color="warn" (click)="onCancel()">{{ 'dashboard.actions.cancel' | translate }}</button>
+      <button mat-raised-button color="primary">{{ 'actions.update' | translate }}</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">{{ 'actions.cancel' | translate }}</button>
     </ng-container>
     <ng-template #elseTemplate>
       <button mat-raised-button color="primary" class="add-button" style="margin-left: 10px">{{ 'actions.add' | translate }}</button>
