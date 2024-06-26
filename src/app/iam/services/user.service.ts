@@ -7,9 +7,7 @@ import {User} from "../models/user.entity";
 })
 export class UserService {
 
-  //baseUrl = 'https://sweetmanager.ryzeon.me';
-
-  baseUrl = 'http://3.135.247.77/api/v1';
+  baseUrl = 'https://sweetmanager.ryzeon.me';
 
   constructor(private http: HttpClient) { }
 
