@@ -1,25 +1,28 @@
-import { Component } from '@angular/core';
-import {UserService} from "../../services/user.service";
-import {User} from "../../models/user.entity";
+import {Component, OnInit} from '@angular/core';
+import {UserService} from "../../services/user/user.service";
 import {Router} from "@angular/router";
+import {BaseFormComponent} from "../../../shared/components/base-form.component";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AuthenticationService} from "../../services/authentication/authentication.service";
+import {SignInRequest} from "../../models/authentication/sign-in.request";
 
 @Component({
   selector: 'app-login-view',
   templateUrl: './login-view.component.html',
   styleUrl: './login-view.component.css'
 })
-export class LoginViewComponent {
-  emailUser: string = '';
+export class LoginViewComponent extends BaseFormComponent implements OnInit{
 
-  passwordUser: string = '';
+  form!: FormGroup;
 
-  listUsers : Array<User> = [];
+  submitted = false;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService) {
+    super();
   }
 
 
-  logIn() {
+  /*logIn() {
 
     this.userService.getUsers()
       .subscribe((users: any) => {
@@ -38,7 +41,22 @@ export class LoginViewComponent {
           alert('User not found!')
         }
       })
+  }*/
+
+  ngOnInit(): void {
+    this.form = this.builder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
+  onSUbmit(){
+    if (this.form.invalid) return;
+    let email = this.form.value.email;
+    let password = this.form.value.password;
+    const signInRequest = new SignInRequest(email, password);
+    this.authenticationService.signIn(signInRequest);
+    this.submitted = true;
+  }
 
 }

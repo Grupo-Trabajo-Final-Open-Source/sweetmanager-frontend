@@ -1,38 +1,55 @@
-import { Component } from '@angular/core';
-import {UserService} from "../../services/user.service";
-import {CompanyService} from "../../services/company.service";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AuthenticationService} from "../../services/authentication/authentication.service";
+import {BaseFormComponent} from "../../../shared/components/base-form.component";
+import {CompanyService} from "../../services/company/company.service";
+import {SignUpRequest} from "../../models/authentication/sign-up.request";
 
 @Component({
   selector: 'app-register-view',
   templateUrl: './register-view.component.html',
   styleUrl: './register-view.component.css'
 })
-export class RegisterViewComponent {
-  companyName: string = '';
+export class RegisterViewComponent extends BaseFormComponent implements OnInit {
 
-  ruc: string = '';
+  form!: FormGroup;
 
-  emailUser: string = '';
+  submitted= false;
 
-  passwordUser: string = '';
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private companyService: CompanyService) {
+    super();
+  }
 
-  completeNameUser : string = '';
-
-
-  constructor(private userService: UserService, private companyService: CompanyService, private router: Router) {
+  ngOnInit(): void {
+    this.form = this.builder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      companyName: ['', Validators.required],
+      ruc: ['', Validators.required],
+      completeName:['', Validators.required]
+    });
   }
 
   register() {
 
-    if(this.companyName == '' || this.ruc == '' || this.emailUser == '' || this.passwordUser == '' || this.completeNameUser == '') {
+    let companyName = this.form.value.companyName;
+
+    let email = this.form.value.email;
+
+    let password = this.form.value.password;
+
+    let completeName = this.form.value.completeName;
+
+    let ruc = this.form.value.ruc;
+
+    if (companyName == '' || ruc == '' || email == '' || password == '' || completeName == '') {
       alert("Please fill all the fields!");
       return;
     }
 
     let company = {
-      name: this.companyName,
-      ruc: this.ruc,
+      name: companyName,
+      ruc: ruc,
       employees: []
     }
 
@@ -40,19 +57,18 @@ export class RegisterViewComponent {
       .subscribe((company: any) => {
         console.log(company);
         let user = {
-          name: this.completeNameUser,
-          email: this.emailUser,
-          password: this.passwordUser,
+          name: completeName,
+          email: email,
+          password: password,
           company: company.id,
-          role: 'MANAGER'
+          role: ['ROLE_MANAGER']
         }
 
-        this.userService.createUser(user)
-          .subscribe((user: any) => {
-            console.log(user);
-            alert('User created correctly!')
-            this.router.navigate(['/payment/subscription']);
-          })
-      })
+        const signUpRequest = new SignUpRequest(user.name, user.email, user.password, user.role, user.company);
+
+        this.authenticationService.signUp(signUpRequest);
+
+        this.submitted = true;
+      });
   }
 }
