@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {UserService} from "../../../iam/services/user.service";
+import {UserService} from "../../../iam/services/user/user.service";
 import {Router} from "@angular/router";
-import {User} from "../../../iam/models/user.entity";
+import {User} from "../../../iam/models/user/user.entity";
 import {Subscription} from "../../models/subscription.entity";
 import {SubscriptionService} from "../../services/subscription.service";
 import {PaymentService} from "../../services/payment.service";

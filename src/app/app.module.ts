@@ -28,8 +28,8 @@ import {
 import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatIcon} from "@angular/material/icon";
-import {FormsModule} from "@angular/forms";
-import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatError, MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatAnchor, MatButton, MatIconButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
@@ -74,6 +74,8 @@ import { ControlPanelViewComponent } from './dashboard/control-panel/pages/contr
 import { ChartsCardComponent } from './dashboard/control-panel/components/charts-card/charts-card.component';
 import { SuppliersCardComponent } from './dashboard/control-panel/components/suppliers-card/suppliers-card.component';
 import { ClientCardComponent } from './dashboard/control-panel/components/client-card/client-card.component';
+import {AuthenticationService} from "./iam/services/authentication/authentication.service";
+import {AuthenticationSectionComponent} from "./iam/components/authentication-section/authentication-section.component";
 
 import {
   CustomerCreateAndEditComponent
@@ -102,35 +104,36 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        SuppliesComponent,
-        SupplyCreateAndEditComponent,
-        RoomCreateAndEditComponent,
-        RoomManagementComponent,
-        MonthlyExpensesComponent,
-        MonthlyIncomeComponent,
-        RoomChartComponent,
-        ReportsViewComponent,
-        AccessViewComponent,
-        LoginViewComponent,
-        RegisterViewComponent,
-        NotificationTableComponent,
-        LanguageSwitcherComponent,
-        ToolbarContentComponent,
-        CardPaymentComponent,
-        CardSubscriptionComponent,
-        CompanyWorkersViewComponent,
-        ProfileViewComponent,
-        ControlPanelViewComponent,
-        ChartsCardComponent,
-        SuppliersCardComponent,
-        ClientCardComponent,
-        CustomerCreateAndEditComponent,
-        CustomersComponent,
-        SuppliersComponent,
-        SupplierCreateAndEditComponent,
-    ],
+  declarations: [
+    AppComponent,
+    SuppliesComponent,
+    SupplyCreateAndEditComponent,
+    RoomCreateAndEditComponent,
+    RoomManagementComponent,
+    MonthlyExpensesComponent,
+    MonthlyIncomeComponent,
+    RoomChartComponent,
+    ReportsViewComponent,
+    AccessViewComponent,
+    LoginViewComponent,
+    RegisterViewComponent,
+    NotificationTableComponent,
+    LanguageSwitcherComponent,
+    ToolbarContentComponent,
+    CardPaymentComponent,
+    CardSubscriptionComponent,
+    CompanyWorkersViewComponent,
+    ProfileViewComponent,
+    ControlPanelViewComponent,
+    ChartsCardComponent,
+    SuppliersCardComponent,
+    ClientCardComponent,
+    AuthenticationSectionComponent,
+    CustomerCreateAndEditComponent,
+    CustomersComponent,
+    SuppliersComponent,
+    SupplierCreateAndEditComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -186,7 +189,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     WorkersManagementComponent,
     ProfileImageComponent,
     ProfileDetailsComponent,
-    NgOptimizedImage,
+    ReactiveFormsModule,
+    MatError,
+    NgOptimizedImage
   ],
   providers: [
     DatePipe,

@@ -1,33 +1,48 @@
-<form>
+<form [formGroup]="form" (submit)="register()">
   <mat-form-field class="full-width">
     <mat-label>{{'iam.sign-in.labels.company-name' | translate}}</mat-label>
-    <input matInput [(ngModel)]="companyName"  name="companyName" required>
+    <input matInput id="companyName" name="companyName" formControlName="companyName" required>
+    <mat-error *ngIf="isInvalidControl(form, 'companyName')">
+      {{errorMessagesForControl(form, 'companyName')}}
+    </mat-error>
   </mat-form-field>
   <br>
 
   <mat-form-field class="full-width">
     <mat-label>{{'iam.sign-in.labels.ruc' | translate}}</mat-label>
-    <input matInput [(ngModel)]="ruc" name="ruc" required>
+    <input matInput id="ruc" name="ruc" formControlName="ruc" required>
+    <mat-error *ngIf="isInvalidControl(form, 'ruc')">
+      {{errorMessagesForControl(form, 'ruc')}}
+    </mat-error>
   </mat-form-field>
 
   <br>
 
   <mat-form-field class="full-width">
     <mat-label>{{'iam.sign-in.labels.email' | translate}}</mat-label>
-    <input matInput [(ngModel)]="emailUser" name="email" required>
+    <input matInput id="email" name="email" formControlName="email" required>
+    <mat-error *ngIf="isInvalidControl(form, 'email')">
+      {{errorMessagesForControl(form, 'email')}}
+    </mat-error>
   </mat-form-field>
   <br>
 
   <mat-form-field class="full-width">
     <mat-label>{{'iam.sign-in.labels.full-name' | translate}}</mat-label>
-    <input matInput  [(ngModel)]="completeNameUser" name="completeName" required>
+    <input matInput id="completeName" name="completeName" formControlName="completeName" required>
+    <mat-error *ngIf="isInvalidControl(form, 'completeName')">
+      {{errorMessagesForControl(form, 'completeName')}}
+    </mat-error>
   </mat-form-field>
 
   <br>
 
   <mat-form-field class="full-width">
     <mat-label>{{'iam.sign-in.labels.password' | translate}}</mat-label>
-    <input matInput type="password" [(ngModel)]="passwordUser" name="password" required>
+    <input matInput id="password" type="password" name="password" formControlName="password" required>
+    <mat-error *ngIf="isInvalidControl(form, 'password')">
+      {{errorMessagesForControl(form, 'password')}}
+    </mat-error>
   </mat-form-field>
 
   <br>
@@ -37,7 +52,7 @@
   </mat-checkbox>
 
   <div class="center">
-    <mat-button-toggle (click)="register()" class="btn btn-primary">{{'iam.sign-in.button-sign-in' | translate}}</mat-button-toggle>
+    <button mat-raised-button color="primary">{{'iam.sign-in.button-sign-in' | translate}}</button>
   </div>
 
 </form>
