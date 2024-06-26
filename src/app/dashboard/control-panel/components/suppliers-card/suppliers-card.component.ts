@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-suppliers-card',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './suppliers-card.component.css'
 })
 export class SuppliersCardComponent {
+  constructor(private router: Router){
 
+  }
+
+  redirect(){
+    this.router.navigate(['/dashboard/suppliers']);
+  }
 }

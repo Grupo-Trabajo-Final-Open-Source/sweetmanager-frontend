@@ -13,9 +13,9 @@ import {MatSort} from "@angular/material/sort";
 export class SuppliesComponent implements OnInit, AfterViewInit {
   // Attributes
   options = [
-    {path: '/monitoring/rooms', title: 'Room Management'},
     {path: '/dashboard/panel', title: 'Reports View'},
-    {path: '/supply-management/supplies', title: 'Supplies'},
+    {path: '/monitoring/rooms', title: 'Room Management'},
+    {path: '/supplier-management/suppliers', title: 'Suppliers'},
     {path: '/profile/company', title: 'My Company'},
     {path: '/profile/user', title: 'My profile'}
   ]

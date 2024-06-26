@@ -3,6 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {NotificationService} from "../../services/notification.service";
+import {HttpHeaders} from "@angular/common/http";
 
 @Component({
   selector: 'app-notification-table',

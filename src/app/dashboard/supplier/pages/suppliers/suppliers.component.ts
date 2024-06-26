@@ -13,8 +13,8 @@ import {Supplier} from "../../models/supplier.entity";
 export class SuppliersComponent implements OnInit, AfterViewInit {
   // Attributes
   options = [
-    {path: '/monitoring/rooms', title: 'Room Management'},
     {path: '/dashboard/panel', title: 'Reports View'},
+    {path: '/monitoring/rooms', title: 'Room Management'},
     {path: '/supplier-management/suppliers', title: 'Suppliers'},
     {path: '/profile/company', title: 'My Company'},
     {path: '/profile/user', title: 'My profile'}
