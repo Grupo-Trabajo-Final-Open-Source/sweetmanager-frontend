@@ -28,7 +28,7 @@ import {
 import {MatSort, MatSortHeader} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatIcon} from "@angular/material/icon";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatAnchor, MatButton, MatIconButton} from "@angular/material/button";
@@ -74,6 +74,8 @@ import { ControlPanelViewComponent } from './dashboard/control-panel/pages/contr
 import { ChartsCardComponent } from './dashboard/control-panel/components/charts-card/charts-card.component';
 import { SuppliersCardComponent } from './dashboard/control-panel/components/suppliers-card/suppliers-card.component';
 import { ClientCardComponent } from './dashboard/control-panel/components/client-card/client-card.component';
+import {AuthenticationService} from "./iam/services/authentication/authentication.service";
+import {AuthenticationSectionComponent} from "./iam/components/authentication-section/authentication-section.component";
 
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
@@ -119,7 +121,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ControlPanelViewComponent,
     ChartsCardComponent,
     SuppliersCardComponent,
-    ClientCardComponent
+    ClientCardComponent,
+    AuthenticationSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -175,7 +178,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CompanyDetailsComponent,
     WorkersManagementComponent,
     ProfileImageComponent,
-    ProfileDetailsComponent
+    ProfileDetailsComponent,
+    ReactiveFormsModule
   ],
   providers: [
     DatePipe,
