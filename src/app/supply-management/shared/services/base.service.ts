@@ -6,7 +6,7 @@ import {catchError, Observable, retry, throwError} from "rxjs";
   providedIn: 'root'
 })
 export class BaseService<T> {
-  basePath: string =`https://sweetmanager.ryzeon.me`;
+  baseUrl: string =`https://sweetmanagerapi.ryzeon.me/api/v1`;
   resourceEndpoint: string = '/resources';
   httpOptions = {
     headers: new HttpHeaders({
@@ -33,29 +33,48 @@ export class BaseService<T> {
   }
 
   private resourcePath(): string {
-    return `${this.basePath}${this.resourceEndpoint}`;
+    return `${this.baseUrl}${this.resourceEndpoint}`;
   }
 
   //CRUD
   //Get All Resources
   getAll(): Observable<T> {
     console.log('Get All Resources:' + this.resourcePath());
-    return this.http.get<T>(this.resourcePath(), this.httpOptions)
+    return this.http.get<T>(this.resourcePath(), {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    })
       .pipe(retry(2), catchError(this.handleError));
   }
   //Delete Resource
   delete(id: any) {
-    return this.http.delete(`${this.resourcePath()}/${id}`, this.httpOptions)
+    return this.http.delete(`${this.resourcePath()}/${id}`, {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    })
       .pipe(retry(2), catchError(this.handleError));
   }
-  //Update Resource
+//Update Resource
   update(id: any, item: any) {
-    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item),
-      this.httpOptions).pipe(retry(2), catchError(this.handleError));
+    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    })
+      .pipe(retry(2), catchError(this.handleError));
   }
   //Create Resource
   create(item: any) {
-    return this.http.post<T>(this.resourcePath(),JSON.stringify(item),
-      this.httpOptions).pipe(retry(2), catchError(this.handleError));
+    return this.http.post<T>(this.resourcePath(), JSON.stringify(item), {
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    }).pipe(retry(2), catchError(this.handleError));
   }
 }
