@@ -55,11 +55,9 @@ export class AuthenticationService {
         next: (response) => {
           localStorage.setItem('userId', response.id.toString()); // Get User Id
 
-          localStorage.setItem('newUser', JSON.stringify(response));
+          // localStorage.setItem('newUser', JSON.stringify(response));
 
           alert(`Signed up as ${response.email} with id ${response.id}`);
-
-          // this.router.navigate(['/payment/subscription']).then();
         },
         error: (error) => {
           console.error(`Error while signing up: ${error}`);
@@ -85,16 +83,16 @@ export class AuthenticationService {
           console.log(`Signed in as ${response.email} with token ${response.token}`);
 
           if(localStorage.getItem('validation') == 'true') {
-            let id = '';
-
-            // @ts-ignore
-            let company = JSON.parse(localStorage.getItem('company'));
-
-            this.companyService.createCompany(company).subscribe((response : any) =>{
-              id = response['id'].toString();
-            });
-
-            localStorage.setItem('companyId', id);
+            let company = localStorage.getItem('company');
+            if (company) {
+              let companyObject = JSON.parse(company);
+              this.companyService.createCompany(companyObject).subscribe((response : any) =>{
+                let id = response['id'].toString();
+                localStorage.setItem('companyId', id);
+              });
+            } else {
+              console.log('No company data found in localStorage');
+            }
           }
 
           alert("Successfully logged in!")

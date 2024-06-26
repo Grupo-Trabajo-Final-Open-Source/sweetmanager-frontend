@@ -4,12 +4,9 @@ export class Company {
 
   ruc : string;
 
-  employees: Array<string>;
-
   constructor() {
     this.name = '';
     this.ruc = '';
-    this.employees = [];
   }
 
 }

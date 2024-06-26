@@ -51,8 +51,7 @@ export class RegisterViewComponent extends BaseFormComponent implements OnInit {
 
     let company = {
       name: companyName,
-      ruc: ruc,
-      employees: []
+      ruc: ruc
     }
 
     localStorage.setItem('company', JSON.stringify(company));
@@ -66,6 +65,8 @@ export class RegisterViewComponent extends BaseFormComponent implements OnInit {
       company: 0,
       roles: ['ROLE_MANAGER']
     }
+
+    localStorage.setItem('newUser', JSON.stringify(user));
 
     localStorage.setItem('validation', 'true');
 

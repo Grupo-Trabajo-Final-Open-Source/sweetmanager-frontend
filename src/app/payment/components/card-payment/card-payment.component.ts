@@ -70,11 +70,14 @@ export class CardPaymentComponent {
 
     let user  = localStorage.getItem('newUser');
 
-    console.log(user);
-
-    alert("casi llega")
-    // @ts-ignore
-    this.authenticationService.signIn(new SignInRequest(user['email'],user['password']));
+    if(user){
+      let userClass = JSON.parse(user);
+      // @ts-ignore
+      this.authenticationService.signIn(new SignInRequest(userClass['email'],userClass['password']));
+    }
+    else{
+      console.log('No user found')
+    }
 
     let payment  = {
       idTitular: this.idTitular,
