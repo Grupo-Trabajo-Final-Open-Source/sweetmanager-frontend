@@ -62,7 +62,7 @@ import {
   MatDatepickerToggle
 } from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import {DatePipe} from "@angular/common";
+import {DatePipe, NgOptimizedImage} from "@angular/common";
 import {CompanyLogoComponent} from "./profile/company-workers/components/company-logo/company-logo.component";
 import {CompanyDetailsComponent} from "./profile/company-workers/components/company-details/company-details.component";
 import {
@@ -77,6 +77,12 @@ import { ClientCardComponent } from './dashboard/control-panel/components/client
 import {AuthenticationService} from "./iam/services/authentication/authentication.service";
 import {AuthenticationSectionComponent} from "./iam/components/authentication-section/authentication-section.component";
 
+import {
+  CustomerCreateAndEditComponent
+} from "./dashboard/customer/components/customer-create-and-edit/customer-create-and-edit.component";
+import {CustomersComponent} from "./dashboard/customer/pages/customers/customers.component";
+import { SuppliersComponent } from './dashboard/supplier/pages/suppliers/suppliers.component';
+import { SupplierCreateAndEditComponent } from './dashboard/supplier/components/supplier-create-and-edit/supplier-create-and-edit.component';
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -122,7 +128,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     ChartsCardComponent,
     SuppliersCardComponent,
     ClientCardComponent,
-    AuthenticationSectionComponent
+    AuthenticationSectionComponent,
+    CustomerCreateAndEditComponent,
+    CustomersComponent,
+    SuppliersComponent,
+    SupplierCreateAndEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -180,7 +190,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfileImageComponent,
     ProfileDetailsComponent,
     ReactiveFormsModule,
-    MatError
+    MatError,
+    NgOptimizedImage
   ],
   providers: [
     DatePipe,

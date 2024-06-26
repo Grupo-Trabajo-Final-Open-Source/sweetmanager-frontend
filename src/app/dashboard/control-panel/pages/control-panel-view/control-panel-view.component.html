@@ -1,15 +1,45 @@
+<header>
+  <app-toolbar-content></app-toolbar-content>
+</header>
 <div class="main-container">
-  <div class="title-container">
-    <p class=" title-panel-control">Control Panel</p>
-    <p class="title-statistical-reports">RECENTLY VIEWED STATISTICS</p>
-  </div>
-  <div class="col monthly-expenses">
-    <app-monthly-expenses></app-monthly-expenses>
-  </div>
-  <div class="col monthly-income">
-    <app-monthly-income></app-monthly-income>
-  </div>
-  <div class="col room-chart">
-    <app-room-chart></app-room-chart>
-  </div>
+  <!-- Control Panel Title Section -->
+  <header class="title-container">
+    <h1 class="title-panel-control">{{'control-panel' | translate}}</h1>
+  </header>
+
+  <!-- Cards Section -->
+  <main>
+    <section class="cards-container">
+      <article class="charts-card">
+        <app-charts-card></app-charts-card>
+      </article>
+      <article class="suppliers-card">
+        <app-suppliers-card></app-suppliers-card>
+      </article>
+      <article class="client-card">
+        <app-client-card></app-client-card>
+      </article>
+    </section>
+
+    <!-- Notifications Section -->
+    <section class="notifications-container">
+      <app-notification-table></app-notification-table>
+    </section>
+
+    <!-- Graphs Section -->
+    <section class="graphs-container">
+      <h2 class="title-statistical-reports">{{'dashboard.recently-viewed-statistic' | translate}}</h2>
+      <div class="top-row">
+        <article class="monthly-expenses">
+          <app-monthly-expenses></app-monthly-expenses>
+        </article>
+        <article class="monthly-income">
+          <app-monthly-income></app-monthly-income>
+        </article>
+      </div>
+      <article class="room-chart">
+        <app-room-chart></app-room-chart>
+      </article>
+    </section>
+  </main>
 </div>

@@ -1,0 +1,40 @@
+<!-- Create and Edit Form -->
+<h2>{{ editMode ? ('actions.edit' | translate) + ' ' + ('customer.title' | translate) + ':'
+  : ('actions.add' | translate) + ' ' + ('dashboard.customer.title' | translate) + ':'}}</h2>
+<div class="form-section">
+  <form (submit)="onSubmit()" #customerForm='ngForm' class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="{{'dashboard.customer.name' | translate}}" name="name" required [(ngModel)]="customer.name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'dashboard.customer.email' | translate }}" name="email" required [(ngModel)]="customer.email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'dashboard.customer.phoneNumber' | translate }}" name="phoneNumber" required [(ngModel)]="customer.phoneNumber">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="{{ 'dashboard.customer.reservationDate' | translate }}" name="reservationDate" required [(ngModel)]="customer.reservationDate">
+      <button mat-icon-button matSuffix (click)="picker.open()">
+        <mat-icon>calendar_today</mat-icon>
+      </button>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'dashboard.customer.reservationTime' | translate }}" name="reservationTime" required [(ngModel)]="customer.reservationTime">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="{{ 'dashboard.customer.cost' | translate }}" name="cost" required [(ngModel)]="customer.cost">
+    </mat-form-field>
+    <button mat-icon-button (click)="clearReservationDate(); picker.open()">
+      <mat-icon>calendar_today</mat-icon>
+    </button>
+    <mat-datepicker #picker></mat-datepicker>
+    <ng-container *ngIf="editMode; else elseTemplate">
+      <button mat-raised-button color="primary">{{ 'dashboard.actions.update' | translate }}</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">{{ 'dashboard.actions.cancel' | translate }}</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-raised-button color="primary" class="add-button" style="margin-left: 10px">{{ 'actions.add' | translate }}</button>
+    </ng-template>
+  </form>
+</div>

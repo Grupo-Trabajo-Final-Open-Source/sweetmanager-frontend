@@ -1,123 +1,122 @@
 {
-    "iam": {
-      "log-in":{
-        "title-card": "Welcome to Sweet Manager",
-        "tabs-title": "Log In",
-        "checkbox-password": "Remember password",
-        "button-login": "Log In",
-        "labels": {
-          "email": "Email",
-          "password": "Password"
-        }
-      },
-      "sign-in": {
-        "title-card": "Welcome to Sweet Manager",
-        "tabs-title": "Sign In",
-        "checkbox-privacy": "By signing up, you agree to the Terms of Service and Privacy Policy",
-        "button-sign-in": "Register Account",
-        "labels": {
-          "company-name": "Company Name",
-          "ruc": "RUC",
-          "full-name": "Name and LastName (Owner)",
-          "email": "Email",
-          "password": "Password"
-        }
-      }
-    },
-    "interaction": {
-      "title": "Notifications",
-      "attributes": {
-        "id": "Id",
-        "title": "Title",
-        "message": "Message",
-        "date": "Date"
-      }
-    },
-    "payment": {
-      "management": {
-        "title": "Proceed with the Payment",
-        "titular-name": "CardHolder Name",
-        "number-card": "Card Number",
-        "expiration-date": "Expiration Date",
-        "security-code": "CVC",
+  "iam": {
+    "log-in": {
+      "title-card": "Welcome to Sweet Manager",
+      "tabs-title": "Log In",
+      "checkbox-password": "Remember password",
+      "button-login": "Log In",
+      "labels": {
         "email": "Email",
-        "confirm-button": "Confirm Payment"
-      },
-      "subscription": {
-        "title": "Select a Plan",
-        "cards": {
-          "basic": {
-            "title": "BASIC",
-            "price-month": "month",
-            "description": "DataBase with 500GB of storage",
-            "technical-support": "Restricted Technical Support"
-          },
-          "regular": {
-            "title": "REGULAR",
-            "price-month": "month",
-            "description": "DataBase with 1TB of storage",
-            "technical-support": "Technical Support 24/7"
-          },
-          "premium": {
-            "title": "PREMIUM",
-            "price-month": "month",
-            "description": "DataBase with 5TB of storage",
-            "technical-support": "Technical Support 24/7"
-          }
+        "password": "Password"
+      }
+    },
+    "sign-in": {
+      "title-card": "Welcome to Sweet Manager",
+      "tabs-title": "Sign In",
+      "checkbox-privacy": "By signing up, you agree to the Terms of Service and Privacy Policy",
+      "button-sign-in": "Register Account",
+      "labels": {
+        "company-name": "Company Name",
+        "ruc": "RUC",
+        "full-name": "Name and LastName (Owner)",
+        "email": "Email",
+        "password": "Password"
+      }
+    }
+  },
+  "interaction": {
+    "title": "NOTIFICATIONS",
+    "attributes": {
+      "id": "Id",
+      "title": "Title",
+      "message": "Message",
+      "date": "Date"
+    }
+  },
+  "payment": {
+    "management": {
+      "title": "Proceed with the Payment",
+      "titular-name": "CardHolder Name",
+      "number-card": "Card Number",
+      "expiration-date": "Expiration Date",
+      "security-code": "CVC",
+      "email": "Email",
+      "confirm-button": "Confirm Payment"
+    },
+    "subscription": {
+      "title": "Select a Plan",
+      "cards": {
+        "basic": {
+          "title": "BASIC",
+          "price-month": "month",
+          "description": "DataBase with 500GB of storage",
+          "technical-support": "Restricted Technical Support"
         },
-        "button": "Get Started"
-      }
-    },
-    "rooms-monitoring": {
-      "view": {
-        "id": "ide",
-        "name": "name",
-        "description": "description",
-        "worker": "worker",
-        "client": "client",
-        "totalbeds": "TotalBeds",
-        "totalbathrooms": "TotalBathrooms",
-        "totaltelevision": "TotalTelevision",
-        "status": "status",
-        "title": "Manage rooms",
-        "add": "add",
-        "edit": "edit",
-        "titleNew": "New Room",
-        "titleEdit": "Edit Room"
-      }
-    },
-    "control-panel": "Control Panel",
-    "actions": {
-      "add": "Add",
-      "title": "Actions",
-      "edit": "Edit",
-      "new": "New",
-      "update": "Update",
-      "create": "Create",
-      "cancel": "Cancel",
-      "delete": "Delete",
-      "confirm-delete": "Are you sure you want to delete this item?",
-      "confirmation": "Confirm?"
-    },
-    "notifSupply": {
-      "success": "Success",
-      "created": "Supply Created",
-      "updated": "Supply Updated",
-      "deleted": "Supply Deleted",
-      "warning": "Warning",
-      "fields-required": "All fields must be filled"
-    },
-    "manage-supplies": "Manage Supplies",
-    "supply": {
-      "title": "Supply",
-      "product": "Product",
-      "quantity": "Quantity",
-      "address": "Address",
-      "expire": "Expiration Date",
-      "search": "Search..."
-    },
-  "profile":
-  {
+        "regular": {
+          "title": "REGULAR",
+          "price-month": "month",
+          "description": "DataBase with 1TB of storage",
+          "technical-support": "Technical Support 24/7"
+        },
+        "premium": {
+          "title": "PREMIUM",
+          "price-month": "month",
+          "description": "DataBase with 5TB of storage",
+          "technical-support": "Technical Support 24/7"
+        }
+      },
+      "button": "Get Started"
+    }
+  },
+  "rooms-monitoring": {
+    "view": {
+      "id": "ide",
+      "name": "name",
+      "description": "description",
+      "worker": "worker",
+      "client": "client",
+      "totalbeds": "TotalBeds",
+      "totalbathrooms": "TotalBathrooms",
+      "totaltelevision": "TotalTelevision",
+      "status": "status",
+      "title": "Manage rooms",
+      "add": "add",
+      "edit": "edit",
+      "titleNew": "New Room",
+      "titleEdit": "Edit Room"
+    }
+  },
+  "control-panel": "Control Panel",
+  "actions": {
+    "add": "Add",
+    "title": "Actions",
+    "edit": "Edit",
+    "new": "New",
+    "update": "Update",
+    "create": "Create",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm-delete": "Are you sure you want to delete this item?",
+    "confirmation": "Confirm?"
+  },
+  "notifSupply": {
+    "success": "Success",
+    "created": "Supply Created",
+    "updated": "Supply Updated",
+    "deleted": "Supply Deleted",
+    "warning": "Warning",
+    "fields-required": "All fields must be filled"
+  },
+  "manage-supplies": "Manage Supplies",
+  "supply": {
+    "title": "Supply",
+    "product": "Product",
+    "quantity": "Quantity",
+    "address": "Address",
+    "expire": "Expiration Date",
+    "search": "Search..."
+  },
+  "profile": {
     "user": {
       "my-profile": "My Profile",
       "name": "Name",
@@ -145,6 +144,45 @@
       "search-workers": "Search workers",
       "invite-workers": "Invite workers",
       "view-more": "View more"
+    }
+  },
+  "dashboard": {
+    "statistical-reports": "Statistical Reports",
+    "supplier-management": "Supplier Management",
+    "customer-management": "Customer Management",
+    "recently-viewed-statistic": "RECENTLY VIEWED STATISTICS",
+    "monthly-chart-of-income": "Monthly Income Chart",
+    "monthly-chart-of-income-and-expenses": "Monthly Income and Expenses Chart",
+    "chart-of-occupancy-by-room-type": "Occupancy Chart by Room Type",
+    "manage-customers": "Customer Management",
+    "customer": {
+      "title": "Customer",
+      "name": "Name",
+      "name-required": "A name is required",
+      "email": "Email",
+      "email-required": "An email is required",
+      "phoneNumber": "Phone Number",
+      "phoneNumber-required": "A phone number is required",
+      "reservationDate": "Reservation Date",
+      "reservationDate-required": "A reservation date is required",
+      "reservationTime": "Reservation Time",
+      "reservationTime-required": "A reservation time is required",
+      "cost": "Cost",
+      "cost-required": "A cost is required",
+      "search": "Search..."
+    },
+    "manage-suppliers": "Supplier Management",
+    "supplier": {
+      "title": "Supplier",
+      "name": "Name",
+      "name-required": "Name is required",
+      "contact": "Contact",
+      "contact-required": "Contact is required",
+      "address": "Address",
+      "address-required": "Address is required",
+      "suppliedProduct": "Supplied Product",
+      "suppliedProduct-required": "Supplied product is required",
+      "search": "Search..."
     }
   }
 }

@@ -1,42 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
-.title-container {
+.main-container {
+  margin-top: 30px;
+}
+
+.title-container .title-panel-control, .graphs-container .title-statistical-reports {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.title-container p.title-panel-control {
-  font-size: 30px;
+.title-container .title-panel-control {
+  font-size: 32px;
   font-weight: bold;
   color: #000000;
   font-family: 'Nunito', sans-serif;
 }
 
-.title-container p.title-statistical-reports {
-  font-size: 25px;
+.graphs-container .title-statistical-reports {
+  font-size: 23px;
   font-weight: bold;
-  color: #4A845B;
+  color: #1D8035;
   font-family: 'Nunito', sans-serif;
 }
 
-.col.monthly-expenses {
-  width: 50%;
-  height: 50%;
+.charts-card {
+  transform:translateY(7.5px);
 }
 
-.col.monthly-income {
-  width: 50%;
-  height: 50%;
+.suppliers-card {
+  transform:translateY(-4px);
 }
 
-.col room-chart {
-  width: 50%;
-  height: 50%;
+.cards-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+.cards-container article {
+  margin: 0 70px;
+}
 
+.notifications-container {
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
 
+.graphs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 55px auto 0;
+}
 
+.graphs-container .top-row {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
+.monthly-expenses {
+  margin-right: 40px;
+}
+
+.monthly-income {
+  margin-left: 40px;
+}
+
+.room-chart {
+  margin-top: 30px;
+}
+
+.monthly-expenses:hover, .monthly-income:hover, .room-chart:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 850px) {
+  .cards-container, .graphs-container .top-row {
+    flex-direction: column;
+  }
+
+  .cards-container article, .graphs-container .top-row article {
+    margin: 20px auto;
+  }
+
+  .monthly-expenses, .monthly-income {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

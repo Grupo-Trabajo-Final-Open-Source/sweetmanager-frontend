@@ -1,0 +1,26 @@
+<!-- Create and Edit Form -->
+<h2>{{ editMode ? ('actions.edit' | translate) + ' ' + ('dashboard.supplier.title' | translate) + ':'
+  : ('actions.add' | translate) + ' ' + ('dashboard.supplier.title' | translate) + ':'}}</h2>
+<div class="form-section">
+  <form (submit)="onSubmit()" #supplierForm='ngForm' class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="{{'dashboard.supplier.name' | translate}}" name="name" required [(ngModel)]="supplier.name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'dashboard.supplier.contact' | translate }}" name="contact" required [(ngModel)]="supplier.contact">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'dashboard.supplier.address' | translate }}" name="address" required [(ngModel)]="supplier.address">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'dashboard.supplier.suppliedProduct' | translate }}" name="suppliedProduct" required [(ngModel)]="supplier.suppliedProduct">
+    </mat-form-field>
+    <ng-container *ngIf="editMode; else elseTemplate">
+      <button mat-raised-button color="primary">{{ 'actions.update' | translate }}</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">{{ 'actions.cancel' | translate }}</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-raised-button color="primary" class="add-button" style="margin-left: 10px">{{ 'actions.add' | translate }}</button>
+    </ng-template>
+  </form>
+</div>
