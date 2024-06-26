@@ -11,6 +11,6 @@ export class SupplierService extends BaseService<Supplier>{
 
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/suppliers';
+    this.resourceEndpoint = '/providers';
   }
 }
