@@ -4,6 +4,8 @@ import {AuthenticationService} from "../../services/authentication/authenticatio
 import {BaseFormComponent} from "../../../shared/components/base-form.component";
 import {CompanyService} from "../../services/company/company.service";
 import {SignUpRequest} from "../../models/authentication/sign-up.request";
+import {Company} from "../../models/company/company.entity";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-view',
@@ -16,7 +18,7 @@ export class RegisterViewComponent extends BaseFormComponent implements OnInit {
 
   submitted= false;
 
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private companyService: CompanyService) {
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private companyService: CompanyService, private router: Router) {
     super();
   }
 
@@ -49,26 +51,33 @@ export class RegisterViewComponent extends BaseFormComponent implements OnInit {
 
     let company = {
       name: companyName,
-      ruc: ruc,
-      employees: []
+      ruc: ruc
     }
 
-    this.companyService.createCompany(company)
-      .subscribe((company: any) => {
-        console.log(company);
-        let user = {
-          name: completeName,
-          email: email,
-          password: password,
-          company: company.id,
-          roles: ['ROLE_MANAGER']
-        }
+    localStorage.setItem('company', JSON.stringify(company));
 
-        const signUpRequest = new SignUpRequest(user.name, user.email, user.password, user.roles, user.company);
+    console.log(company);
 
-        this.authenticationService.signUp(signUpRequest);
+    let user = {
+      name: completeName,
+      email: email,
+      password: password,
+      company: 0,
+      roles: ['ROLE_MANAGER']
+    }
 
-        this.submitted = true;
-      });
+    localStorage.setItem('newUser', JSON.stringify(user));
+
+    localStorage.setItem('validation', 'true');
+
+    console.log(user);
+
+    const signUpRequest = new SignUpRequest(user.name, user.email, user.password, user.roles, user.company);
+
+    this.authenticationService.signUp(signUpRequest);
+
+    this.submitted = true;
+
+    this.router.navigate(['/payment/subscription']).then();
   }
 }
