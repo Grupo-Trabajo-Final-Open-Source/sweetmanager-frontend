@@ -8,20 +8,17 @@ export class User {
 
   email : string;
 
-  company: string;
+  companyId: number;
 
-  role: string;
+  roles: string;
 
-  notifications: boolean;
-
-  constructor(id = 0, name = '', password = '', email = '', company = '', role = '') {
+  constructor(id = 0, name = '', password = '', email = '', company = 0, role = '') {
     this.id = id;
     this.name = name;
     this.password = password;
     this.email = email;
-    this.company = company;
-    this.role = role;
-    this.notifications = true;
+    this.companyId = company;
+    this.roles = role;
   }
 
 }

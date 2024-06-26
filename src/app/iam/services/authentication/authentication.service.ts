@@ -6,6 +6,7 @@ import {SignUpRequest} from "../../models/authentication/sign-up.request";
 import {SignUpResponse} from "../../models/authentication/sign-up.response";
 import {SignInRequest} from "../../models/authentication/sign-in.request";
 import {SignInResponse} from "../../models/authentication/sign-in.response";
+import {CompanyService} from "../company/company.service";
 
 
 /**
@@ -28,7 +29,7 @@ export class AuthenticationService {
   private signedInUserId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private signedInUsername: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private companyService: CompanyService) { }
 
 
   get isSignedIn() {
@@ -52,16 +53,19 @@ export class AuthenticationService {
     return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
       .subscribe( {
         next: (response) => {
-          console.log(`Signed up as ${response.email} with id ${response.id}`);
+          localStorage.setItem('userId', response.id.toString()); // Get User Id
+
+          localStorage.setItem('newUser', JSON.stringify(response));
+
           alert(`Signed up as ${response.email} with id ${response.id}`);
-          this.router.navigate(['/payment/subscription']).then();
+
+          // this.router.navigate(['/payment/subscription']).then();
         },
         error: (error) => {
           console.error(`Error while signing up: ${error}`);
           this.router.navigate(['/access-view']).then();
         }
       });
-
   }
 
   /**
@@ -79,6 +83,20 @@ export class AuthenticationService {
           this.signedInUsername.next(response.email);
           localStorage.setItem('token', response.token);
           console.log(`Signed in as ${response.email} with token ${response.token}`);
+
+          if(localStorage.getItem('validation') == 'true') {
+            let id = '';
+
+            // @ts-ignore
+            let company = JSON.parse(localStorage.getItem('company'));
+
+            this.companyService.createCompany(company).subscribe((response : any) =>{
+              id = response['id'].toString();
+            });
+
+            localStorage.setItem('companyId', id);
+          }
+
           alert("Successfully logged in!")
           this.router.navigate(['/dashboard/panel']).then();
         },

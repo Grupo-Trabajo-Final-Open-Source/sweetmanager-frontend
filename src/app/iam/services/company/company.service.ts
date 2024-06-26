@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompanyService {
 
-  baseUrl = 'https://sweetmanager.ryzeon.me';
+  baseUrl = 'https://sweetmanager.ryzeon.me/api/v1';
 
   constructor(private http:HttpClient) { }
 
@@ -19,7 +19,10 @@ export class CompanyService {
   }
 
   createCompany(company: any){
-    return this.http.post(`${this.baseUrl}/companies`,company);
+    return this.http.post(`${this.baseUrl}/companies`,{
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')}),
+      body: company
+    });
   }
 
 }

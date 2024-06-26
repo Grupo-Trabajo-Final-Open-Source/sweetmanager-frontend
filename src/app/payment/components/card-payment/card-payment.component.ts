@@ -5,6 +5,9 @@ import {User} from "../../../iam/models/user/user.entity";
 import {Subscription} from "../../models/subscription.entity";
 import {SubscriptionService} from "../../services/subscription.service";
 import {PaymentService} from "../../services/payment.service";
+import {AuthenticationService} from "../../../iam/services/authentication/authentication.service";
+import {SignUpRequest} from "../../../iam/models/authentication/sign-up.request";
+import {SignInRequest} from "../../../iam/models/authentication/sign-in.request";
 
 @Component({
   selector: 'app-card-payment',
@@ -28,7 +31,8 @@ export class CardPaymentComponent {
 
   constructor(private userService: UserService, private router: Router,
               private subscriptionService: SubscriptionService,
-              private paymentService: PaymentService) {
+              private paymentService: PaymentService,
+              private authenticationService: AuthenticationService) {
   }
 
   ngOnInit(){
@@ -62,31 +66,33 @@ export class CardPaymentComponent {
       return;
     }
 
-    this.userService.getUsers().subscribe((users: any) => {
-      this.users = users;
+    this.idTitular = Number(localStorage.getItem('userId'));
 
-      let user = this.users.find(u => u.email == this.email);
+    let user  = localStorage.getItem('newUser');
 
-      if(user != null){
-        this.idTitular = user.id;
-      }
+    console.log(user);
 
-      let payment  = {
-        idTitular: this.idTitular,
-        titularName: this.titularName,
-        targetAccount: this.targetAccount,
-        expirationDate: this.expirationDate,
-        cvc: this.cvc,
-        email: this.email
-      }
+    alert("casi llega")
+    // @ts-ignore
+    this.authenticationService.signIn(new SignInRequest(user['email'],user['password']));
 
-      this.paymentService.createPayment(payment).subscribe((payment: any) => {
-        console.log(payment);
-      })
+    let payment  = {
+      idTitular: this.idTitular,
+      titularName: this.titularName,
+      targetAccount: this.targetAccount,
+      expirationDate: this.expirationDate,
+      cvc: this.cvc,
+      email: this.email
+    }
+
+    console.log(payment);
+
+    this.paymentService.createPayment(payment).subscribe((payment: any) => {
+      console.log(payment);
     })
 
     alert("Pago realizado correctamente!")
 
-    this.router.navigate(['/access-view']);
+    this.router.navigate(['dashboard/panel']).then();
   }
 }
