@@ -25,7 +25,7 @@
       }
     },
     "interaction": {
-      "title": "Notificaciones",
+      "title": "NOTIFICACIONES",
       "attributes": {
         "id": "Código",
         "title": "Título",
@@ -149,5 +149,45 @@
       "invite-workers": "Invitar trabajadores",
       "view-more": "Ver más"
     }
+  },
+  "dashboard": {
+    "statistical-reports": "Reportes Estadísticos",
+    "supplier-management": "Gestión de Proveedores",
+    "customer-management": "Gestión de Clientes",
+    "recently-viewed-statistic": "ESTADÍSTICAS VISTAS RECIENTEMENTE",
+    "monthly-chart-of-income": "Gráfico mensual de ingresos",
+    "monthly-chart-of-income-and-expenses": "Gráfico mensual de ingresos y gastos",
+    "chart-of-occupancy-by-room-type": "Gráfico de ocupación por tipo de habitación",
+    "manage-customers": "Gestión de Clientes",
+    "customer": {
+      "title": "Cliente",
+      "name": "Nombre",
+      "name-required": "Se requiere un nombre",
+      "email": "Correo",
+      "email-required": "Se requiere un correo",
+      "phoneNumber": "Número de teléfono",
+      "phoneNumber-required": "Se requiere un número de teléfono",
+      "reservationDate": "Fecha de reserva",
+      "reservationDate-required": "Se requiere una fecha de reserva",
+      "reservationTime": "Hora de reserva",
+      "reservationTime-required": "Se requiere una hora de reserva",
+      "cost": "Costo",
+      "cost-required": "Se requiere un costo",
+      "search": "Buscar..."
+    },
+    "manage-suppliers": "Gestión de Proveedores",
+    "supplier": {
+      "title": "Proveedor",
+      "name": "Nombre",
+      "name-required": "Se requiere un nombre",
+      "contact": "Contacto",
+      "contact-required": "Se requiere un contacto",
+      "address": "Dirección",
+      "address-required": "Se requiere una dirección",
+      "suppliedProduct": "Producto suministrado",
+      "suppliedProduct-required": "Se requiere un producto suministrado",
+      "search": "Buscar..."
+    }
   }
-}
+  }
+

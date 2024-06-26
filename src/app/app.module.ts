@@ -62,7 +62,7 @@ import {
   MatDatepickerToggle
 } from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import {DatePipe} from "@angular/common";
+import {DatePipe, NgOptimizedImage} from "@angular/common";
 import {CompanyLogoComponent} from "./profile/company-workers/components/company-logo/company-logo.component";
 import {CompanyDetailsComponent} from "./profile/company-workers/components/company-details/company-details.component";
 import {
@@ -75,6 +75,12 @@ import { ChartsCardComponent } from './dashboard/control-panel/components/charts
 import { SuppliersCardComponent } from './dashboard/control-panel/components/suppliers-card/suppliers-card.component';
 import { ClientCardComponent } from './dashboard/control-panel/components/client-card/client-card.component';
 
+import {
+  CustomerCreateAndEditComponent
+} from "./dashboard/customer/components/customer-create-and-edit/customer-create-and-edit.component";
+import {CustomersComponent} from "./dashboard/customer/pages/customers/customers.component";
+import { SuppliersComponent } from './dashboard/supplier/pages/suppliers/suppliers.component';
+import { SupplierCreateAndEditComponent } from './dashboard/supplier/components/supplier-create-and-edit/supplier-create-and-edit.component';
 
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement, BarController);
 
@@ -96,31 +102,35 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SuppliesComponent,
-    SupplyCreateAndEditComponent,
-    RoomCreateAndEditComponent,
-    RoomManagementComponent,
-    MonthlyExpensesComponent,
-    MonthlyIncomeComponent,
-    RoomChartComponent,
-    ReportsViewComponent,
-    AccessViewComponent,
-    LoginViewComponent,
-    RegisterViewComponent,
-    NotificationTableComponent,
-    LanguageSwitcherComponent,
-    ToolbarContentComponent,
-    CardPaymentComponent,
-    CardSubscriptionComponent,
-    CompanyWorkersViewComponent,
-    ProfileViewComponent,
-    ControlPanelViewComponent,
-    ChartsCardComponent,
-    SuppliersCardComponent,
-    ClientCardComponent
-  ],
+    declarations: [
+        AppComponent,
+        SuppliesComponent,
+        SupplyCreateAndEditComponent,
+        RoomCreateAndEditComponent,
+        RoomManagementComponent,
+        MonthlyExpensesComponent,
+        MonthlyIncomeComponent,
+        RoomChartComponent,
+        ReportsViewComponent,
+        AccessViewComponent,
+        LoginViewComponent,
+        RegisterViewComponent,
+        NotificationTableComponent,
+        LanguageSwitcherComponent,
+        ToolbarContentComponent,
+        CardPaymentComponent,
+        CardSubscriptionComponent,
+        CompanyWorkersViewComponent,
+        ProfileViewComponent,
+        ControlPanelViewComponent,
+        ChartsCardComponent,
+        SuppliersCardComponent,
+        ClientCardComponent,
+        CustomerCreateAndEditComponent,
+        CustomersComponent,
+        SuppliersComponent,
+        SupplierCreateAndEditComponent,
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -175,7 +185,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CompanyDetailsComponent,
     WorkersManagementComponent,
     ProfileImageComponent,
-    ProfileDetailsComponent
+    ProfileDetailsComponent,
+    NgOptimizedImage,
   ],
   providers: [
     DatePipe,

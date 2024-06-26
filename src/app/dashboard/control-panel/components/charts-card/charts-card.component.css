@@ -1,0 +1,37 @@
+.centered-button button {
+  background-color: #567d46;;
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 13.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+  border: 2px solid #567d46;;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  width: 170px;
+  height: 38px;
+  transition: background-color 0.3s ease;
+}
+
+.centered-button:hover button {
+  background-color: #14502E;
+  border: 2px solid #14502E;
+}
+
+.centered-button:hover img {
+  transform: scale(1.1);
+}
+
+.centered-button:active button {
+  transform: scale(0.95);
+}
+
+
+.centered-button button .button-content .fa-chevron-right {
+  margin-left: 2px;
+  color: #FFFFFF;
+  font-size: 12px;
+}
