@@ -42,12 +42,13 @@ export class BaseService<T> {
   }
 
   update(id: any, item: any) {
-    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item),
+    //return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item),
+    return this.http.put<T>(this.resourcePath(), JSON.stringify(item),
       this.httpOptions).pipe(retry(2), catchError(this.handleError));
   }
 
   create(item: any) {
-    return this.http.post<T>(this.resourcePath(),JSON.stringify(item),
+    return this.http.post<T>(this.resourcePath(), JSON.stringify(item),
       this.httpOptions).pipe(retry(2), catchError(this.handleError));
   }
 }

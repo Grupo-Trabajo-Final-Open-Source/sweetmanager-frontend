@@ -19,29 +19,14 @@
       <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="name">
-      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.name' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="description">
-      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.description' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.description }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="price">
-      <th *matHeaderCellDef mat-header-cell>price</th>
-      <td *matCellDef="let element" mat-cell>{{ element.price }}</td>
+    <ng-container matColumnDef="typeBedroom">
+      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.typeBedroomId' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.typeBedroomId }}</td>
     </ng-container>
 
     <ng-container matColumnDef="worker">
       <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.worker' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.worker }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="client">
-      <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.client' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.client }}</td>
+      <td *matCellDef="let element" mat-cell>{{ element.workerId }}</td>
     </ng-container>
 
     <ng-container matColumnDef="totalBeds">
@@ -51,7 +36,7 @@
 
     <ng-container matColumnDef="totalBathrooms">
       <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.totalbathrooms' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.totalBathrooms }}</td>
+      <td *matCellDef="let element" mat-cell>{{ element.totalBathroom }}</td>
     </ng-container>
 
     <ng-container matColumnDef="totalTelevision">
@@ -61,7 +46,7 @@
 
     <ng-container matColumnDef="status">
       <th *matHeaderCellDef mat-header-cell>{{ 'rooms-monitoring.view.status' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.status }}</td>
+      <td *matCellDef="let element" mat-cell>{{ element.state }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">

@@ -37,6 +37,7 @@
       "view": {
         "id": "id",
         "name": "nombre",
+        "typeBedroomId": "TipoHabitacion",
         "description": "descripcion",
         "worker": "trabajador",
         "client": "cliente",

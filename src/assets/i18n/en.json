@@ -73,6 +73,7 @@
         "id": "ide",
         "name": "name",
         "description": "description",
+        "typeBedroomId": "TypeBedroomId",
         "worker": "worker",
         "client": "client",
         "totalbeds": "TotalBeds",

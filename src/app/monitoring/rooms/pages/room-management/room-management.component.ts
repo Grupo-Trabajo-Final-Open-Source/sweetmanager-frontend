@@ -22,7 +22,7 @@ export class RoomManagementComponent {
   ]
   roomData: Room;
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'description', 'price', 'worker', 'client', 'totalBeds', 'totalBathrooms', 'totalTelevision', 'status', 'actions'];
+  displayedColumns: string[] = ['id', 'typeBedroom', 'worker', 'totalBeds', 'totalBathrooms', 'totalTelevision', 'status', 'actions'];
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
   isEditMode: boolean;
@@ -49,10 +49,10 @@ export class RoomManagementComponent {
 
   private createRoom() {
 
-    if (this.roomData.status === 'busy') {
+    if (this.roomData.state === 'busy') {
       this.roomData.isBusy = true;
     }
-    else if (this.roomData.status === 'not busy') {
+    else if (this.roomData.state === 'not busy') {
       this.roomData.isBusy = false;
     }
 
@@ -64,10 +64,10 @@ export class RoomManagementComponent {
 
   private updateRoom() {
 
-    if (this.roomData.status === 'busy') {
+    if (this.roomData.state === 'busy') {
       this.roomData.isBusy = true;
     }
-    else if (this.roomData.status === 'not busy') {
+    else if (this.roomData.state === 'not busy') {
       this.roomData.isBusy = false;
     }
 

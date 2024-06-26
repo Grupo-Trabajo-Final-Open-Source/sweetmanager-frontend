@@ -10,6 +10,6 @@ export class RoomControlService extends BaseService<Room> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/rooms';
+    this.resourceEndpoint = '/rooms/bedrooms';
   }
 }

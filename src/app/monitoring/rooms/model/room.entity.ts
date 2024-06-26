@@ -1,29 +1,23 @@
 export class Room {
 
   id: number;
-  name: string;
-  description: string;
-  price: number;
-  worker: string;
-  client: string;
+  typeBedroomId: number;
+  workerId: number;
   totalBeds: number;
-  totalBathrooms: number;
+  totalBathroom: number;
   totalTelevision: number;
   isBusy: boolean;
-  status: string;
+  state: string;
 
   constructor() {
 
     this.id = 0;
-    this.name = '';
-    this.description = '';
-    this.price = 0;
-    this.worker = '';
-    this.client = '';
+    this.typeBedroomId = 0;
+    this.workerId = 0;
     this.totalBeds = 0;
-    this.totalBathrooms = 0;
+    this.totalBathroom = 0;
     this.totalTelevision = 0;
     this.isBusy = false;
-    this.status = '';
+    this.state = '';
   }
 }
