@@ -1,29 +1,28 @@
 export class Room {
-
   id: number;
   name: string;
   description: string;
   price: number;
-  worker: string;
-  client: string;
+  workName: string;
+  clientName: string;
   totalBeds: number;
-  totalBathrooms: number;
+  totalBathroom: number;
   totalTelevision: number;
   isBusy: boolean;
-  status: string;
+  state: string;
 
-  constructor() {
-
-    this.id = 0;
-    this.name = '';
-    this.description = '';
-    this.price = 0;
-    this.worker = '';
-    this.client = '';
-    this.totalBeds = 0;
-    this.totalBathrooms = 0;
-    this.totalTelevision = 0;
-    this.isBusy = false;
-    this.status = '';
+  constructor(id : number = 0, name: string = '', description: string = '', price: number= 0, worker: string = '', client: string = '', totalBeds: number = 0, totalBathrooms: number = 0, totalTelevision: number = 0, isBusy: boolean = false, status: string = ''){
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.price = price;
+    this.workName = worker;
+    this.clientName = client;
+    this.totalBeds = totalBeds;
+    this.totalBathroom = totalBathrooms;
+    this.totalTelevision = totalTelevision;
+    this.isBusy = isBusy;
+    this.state = status;
   }
+
 }

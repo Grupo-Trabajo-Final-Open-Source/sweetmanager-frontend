@@ -1,16 +1,42 @@
 import { Injectable } from '@angular/core';
-import {Supplier} from "../models/supplier.entity";
-import {HttpClient} from "@angular/common/http";
-import {BaseService} from "../../../supply-management/shared/services/base.service";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class SupplierService extends BaseService<Supplier>{
+export class SupplierService {
 
-  constructor(http: HttpClient) {
-    super(http);
-    this.resourceEndpoint = '/suppliers';
+  baseUrl: string = 'https://sweetmanagerapi.ryzeon.me/api/v1';
+
+  constructor(private http: HttpClient) {
   }
+
+  getAll(){
+    return this.http.get(`${this.baseUrl}/suppliers`, {
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')})
+    });
+  }
+
+  create(supplier : any){
+    return this.http.post(`${this.baseUrl}/suppliers`, {
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')}),
+      body: supplier
+    });
+  }
+
+  update(supplier: any){
+    return this.http.put(`${this.baseUrl}/suppliers`, {
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')}),
+      body: supplier
+    });
+  }
+
+  delete(id : number){
+    return this.http.delete(`${this.baseUrl}/suppliers`, {
+      headers: new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')}),
+      body: id
+    });
+  }
+
 }

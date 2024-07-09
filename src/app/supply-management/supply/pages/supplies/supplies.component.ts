@@ -51,6 +51,7 @@ export class SuppliesComponent implements OnInit, AfterViewInit {
   //CRUDs
   private getAllSupplies(){
     this.supplyService.getAll().subscribe((response: any)=>{
+      console.log(response);
       this.dataSource.data = response;
     });
   };
@@ -69,9 +70,10 @@ export class SuppliesComponent implements OnInit, AfterViewInit {
   private updateSupply(){
     if(this.isValidSupply(this.supplyData)){
       let supplyToUpdate = this.supplyData;
-      this.supplyService.update(this.supplyData.id, supplyToUpdate).subscribe((response: any)=>{
+      this.supplyService.update(supplyToUpdate).subscribe((response: any)=>{
         this.dataSource.data = this.dataSource.data.map((supply: Supply)=>{
           if(supply.id === response.id){
+            console.log(response);
             return response;
           }
           return supply;

@@ -69,7 +69,7 @@ export class CustomersComponent implements OnInit, AfterViewInit {
   private updateCustomer(){
     if(this.isValidCustomer(this.customerData)){
       let customerToUpdate = this.customerData;
-      this.customerService.update(this.customerData.id, customerToUpdate).subscribe((response: any)=>{
+      this.customerService.update(customerToUpdate).subscribe((response: any)=>{
         this.dataSource.data = this.dataSource.data.map((customer: Customer)=>{
           if(customer.id === response.id){
             return response;

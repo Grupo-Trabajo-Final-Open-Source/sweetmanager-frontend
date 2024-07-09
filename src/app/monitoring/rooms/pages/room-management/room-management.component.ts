@@ -22,7 +22,7 @@ export class RoomManagementComponent {
   ]
   roomData: Room;
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'description', 'price', 'worker', 'client', 'totalBeds', 'totalBathrooms', 'totalTelevision', 'status', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'description', 'price', 'workName', 'clientName', 'totalBeds', 'totalBathroom', 'totalTelevision', 'state', 'actions'];
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
   isEditMode: boolean;
@@ -31,7 +31,7 @@ export class RoomManagementComponent {
   constructor(private roomControlService: RoomControlService) {
     this.isEditMode = false;
     this.roomData = { } as Room;
-    this.dataSource = new MatTableDataSource<any>();
+    this.dataSource = new MatTableDataSource<Room>();
   }
 
   // Private Methods
@@ -43,16 +43,17 @@ export class RoomManagementComponent {
   // CRUD Actions
   private getAllRooms() {
     this.roomControlService.getAll().subscribe((response: any) => {
+      console.log(response);
       this.dataSource.data = response;
     });
   };
 
   private createRoom() {
 
-    if (this.roomData.status === 'busy') {
+    if (this.roomData.state === 'busy') {
       this.roomData.isBusy = true;
     }
-    else if (this.roomData.status === 'not busy') {
+    else if (this.roomData.state === 'not busy') {
       this.roomData.isBusy = false;
     }
 
@@ -64,18 +65,19 @@ export class RoomManagementComponent {
 
   private updateRoom() {
 
-    if (this.roomData.status === 'busy') {
+    if (this.roomData.state === 'busy') {
       this.roomData.isBusy = true;
     }
-    else if (this.roomData.status === 'not busy') {
+    else if (this.roomData.state === 'not busy') {
       this.roomData.isBusy = false;
     }
 
     let roomToUpdate = this.roomData;
-    this.roomControlService.update(this.roomData.id, roomToUpdate).subscribe((response: any) => {
+    this.roomControlService.update(roomToUpdate).subscribe((response: any) => {
       this.dataSource.data = this.dataSource.data.map((room: Room) => {
         if (room.id === response.id) {
-          return response;
+          return new Room(response.id, response.name, response.description, response.price
+            , response.workName, response.clientName, response.totalBeds, response.totalBathroom, response.totalTelevision, true, response.state);
         }
         return room;
       });

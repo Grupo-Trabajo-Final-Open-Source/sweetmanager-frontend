@@ -69,7 +69,7 @@ export class SuppliersComponent implements OnInit, AfterViewInit {
   private updateSupplier(){
     if(this.isValidSupplier(this.supplierData)){
       let supplierToUpdate = this.supplierData;
-      this.supplierService.update(this.supplierData.id, supplierToUpdate).subscribe((response: any)=>{
+      this.supplierService.update(supplierToUpdate).subscribe((response: any)=>{
         this.dataSource.data = this.dataSource.data.map((supplier: Supplier)=>{
           if(supplier.id === response.id){
             return response;

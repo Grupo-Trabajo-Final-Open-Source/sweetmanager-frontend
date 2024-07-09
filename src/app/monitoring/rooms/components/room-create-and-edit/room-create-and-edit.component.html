@@ -16,27 +16,27 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="{{ 'rooms-monitoring.view.worker' | translate }}" name="worker" required [(ngModel)]="room.worker">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.worker' | translate }}" name="workName" required [(ngModel)]="room.workName">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="{{ 'rooms-monitoring.view.client' | translate }}" name="client" required [(ngModel)]="room.client">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.client' | translate }}" name="clientName" required [(ngModel)]="room.clientName">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.totalbeds' | translate }}" name="totalBeds" required [(ngModel)]="room.totalBeds">
+      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.total-beds' | translate }}" name="totalBeds" required [(ngModel)]="room.totalBeds">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.totalbathrooms' | translate }}" name="totalBathrooms" required [(ngModel)]="room.totalBathrooms">
+      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.total-bathrooms' | translate }}" name="totalBathroom" required [(ngModel)]="room.totalBathroom">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.totaltelevision' | translate }}" name="totalTelevision" required [(ngModel)]="room.totalTelevision">
+      <input matInput type="number" placeholder="{{ 'rooms-monitoring.view.total-television' | translate }}" name="totalTelevision" required [(ngModel)]="room.totalTelevision">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="{{ 'rooms-monitoring.view.status' | translate }}" name="status" required [(ngModel)]="room.status">
+      <input matInput placeholder="{{ 'rooms-monitoring.view.status' | translate }}" name="state" required [(ngModel)]="room.state">
     </mat-form-field>
 
     <ng-container *ngIf="editMode; else elseTemplate">

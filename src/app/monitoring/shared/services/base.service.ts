@@ -2,11 +2,12 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 
 export class BaseService<T> {
-  basePath: string =`https://sweetmanager.ryzeon.me`;
+  basePath: string = 'https://sweetmanagerapi.ryzeon.me/api/v1'
   resourceEndpoint: string = '/resources';
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type' : 'application/json'
+      'Content-Type' : 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
     })
   }
 
@@ -41,8 +42,8 @@ export class BaseService<T> {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  update(id: any, item: any) {
-    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item),
+  update(item: any) {
+    return this.http.put<T>(`${this.resourcePath()}`, JSON.stringify(item),
       this.httpOptions).pipe(retry(2), catchError(this.handleError));
   }
 

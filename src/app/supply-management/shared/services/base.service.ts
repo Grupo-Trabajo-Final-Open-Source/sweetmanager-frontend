@@ -6,11 +6,12 @@ import {catchError, Observable, retry, throwError} from "rxjs";
   providedIn: 'root'
 })
 export class BaseService<T> {
-  basePath: string =`https://sweetmanager.ryzeon.me`;
+  basePath: string =`https://sweetmanagerapi.ryzeon.me/api/v1`;
   resourceEndpoint: string = '/resources';
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type' : 'application/json'
+      'Content-Type' : 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
     })
   }
 
@@ -43,16 +44,19 @@ export class BaseService<T> {
     return this.http.get<T>(this.resourcePath(), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
   //Delete Resource
   delete(id: any) {
     return this.http.delete(`${this.resourcePath()}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
   //Update Resource
-  update(id: any, item: any) {
-    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item),
+  update(item: any) {
+    return this.http.put<T>(`${this.resourcePath()}`, JSON.stringify(item),
       this.httpOptions).pipe(retry(2), catchError(this.handleError));
   }
+
   //Create Resource
   create(item: any) {
     return this.http.post<T>(this.resourcePath(),JSON.stringify(item),
