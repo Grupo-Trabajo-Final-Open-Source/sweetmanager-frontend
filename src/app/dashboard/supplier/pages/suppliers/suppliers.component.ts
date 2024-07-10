@@ -21,7 +21,7 @@ export class SuppliersComponent implements OnInit, AfterViewInit {
   ]
   supplierData: Supplier;
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'contact', 'address', 'suppliedProduct', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'contact', 'address', 'product', 'actions'];
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
   isEditMode: boolean;
@@ -35,7 +35,7 @@ export class SuppliersComponent implements OnInit, AfterViewInit {
   }
   // Validate Method
   isValidSupplier(element: Supplier): boolean {
-    if (!element.name || !element.contact || !element.address || !element.suppliedProduct){
+    if (!element.name || !element.contact || !element.address || !element.product){
       return false;
     }
     else {

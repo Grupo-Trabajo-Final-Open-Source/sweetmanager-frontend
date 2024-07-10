@@ -13,7 +13,7 @@
       <input matInput placeholder="{{ 'dashboard.supplier.address' | translate }}" name="address" required [(ngModel)]="supplier.address">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="{{ 'dashboard.supplier.suppliedProduct' | translate }}" name="suppliedProduct" required [(ngModel)]="supplier.suppliedProduct">
+      <input matInput placeholder="{{ 'dashboard.supplier.suppliedProduct' | translate }}" name="product" required [(ngModel)]="supplier.product">
     </mat-form-field>
     <ng-container *ngIf="editMode; else elseTemplate">
       <button mat-raised-button color="primary">{{ 'actions.update' | translate }}</button>
